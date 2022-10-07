@@ -3,13 +3,10 @@ package people;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-
+import java.util.*;
 
 
 public final class People {
@@ -42,6 +39,10 @@ public final class People {
         String groupCode;
 
         String[] splited = data.split(",");
+
+//        System.out.println(splited[0]);
+        if(Objects.equals(splited[0], "\n") || Objects.equals(splited[0], "\r"))
+            return;
 
         idPerson = splited[0];
         if(!this.people.isEmpty())
@@ -76,7 +77,7 @@ public final class People {
     }
 
     public void writeToFile(String filename) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filename+".txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename+".txt", Charset.forName("windows-1250")));
 
         String output = FIRST_LINE_PEOPLE +"\n";
         for(Person p : people)

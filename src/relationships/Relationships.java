@@ -6,6 +6,7 @@ import people.Person;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public final class Relationships {
     }
 
     public void writeToFile(String filename) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filename+".txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename+".txt", Charset.forName("windows-1250")));
 
         String output = this.toString();
 

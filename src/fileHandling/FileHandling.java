@@ -12,7 +12,7 @@ public class FileHandling {
         try{
             File fname = new File(fileName);
             List<String> listaPeopli = new ArrayList<>();
-            Scanner input2program = new Scanner(fname);
+            Scanner input2program = new Scanner(fname,"windows-1250");
             String data = input2program.nextLine();
             while (input2program.hasNextLine()){
                 data = input2program.nextLine();
