@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+out/production/ProjectJava/fileHandling/FileHandling.class
+out/production/ProjectJava/people/People.class
+out/production/ProjectJava/relationships/Relationships.class
