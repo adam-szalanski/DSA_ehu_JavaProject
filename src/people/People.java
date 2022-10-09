@@ -1,9 +1,8 @@
 package people;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import fileHandling.FileHandling;
+
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -11,6 +10,7 @@ import java.util.*;
 
 public final class People {
     public final static String FIRST_LINE_PEOPLE = "idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode";
+    private final static String FILENAME = "people";
     public People() {
         this.people = new ArrayList<>();
     }
@@ -77,14 +77,14 @@ public final class People {
     }
 
     public void writeToFile(String filename) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(filename+".txt", Charset.forName("windows-1250")));
-
         String output = FIRST_LINE_PEOPLE +"\n";
         for(Person p : people)
             output+=p.toString()+"\n";
         output.substring(0,output.length()-1);
+        if(filename!=null)
+            FileHandling.writeToFile(output,filename);
+        else
+            FileHandling.writeToFile(output,FILENAME);
 
-        writer.write(output);
-        writer.close();
     }
 }

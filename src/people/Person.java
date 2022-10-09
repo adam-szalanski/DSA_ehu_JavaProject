@@ -135,19 +135,6 @@ public class Person {
 
     @Override
     public String toString() {
-//        return "Person{" +
-//                "idPerson=" + idPerson +
-//                ", name='" + name + '\'' +
-//                ", lastname='" + lastname + '\'' +
-//                ", birthdate=" + birthdate +
-//                ", gender=" + gender +
-//                ", birthplace='" + birthplace + '\'' +
-//                ", home='" + home + '\'' +
-//                ", studiedAt=" + studiedAt +
-//                ", workplaces=" + workplaces +
-//                ", films=" + films +
-//                ", groupCode=" + groupCode +
-//                '}';
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         String output = idPerson+','
                 +name+","

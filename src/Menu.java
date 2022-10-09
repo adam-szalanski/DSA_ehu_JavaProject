@@ -84,6 +84,28 @@ public class Menu {
                                 break;
                         }
                         case 5: {
+                                System.out.println("Write down a file name (without file extention)");
+                                input = new Scanner(System.in);
+                                select = input.nextLine();
+                                try {
+                                        ppl.writeToFile(select);
+                                }catch (Exception e){
+                                        e.printStackTrace();
+                                }
+                                break;
+                        }
+                        case 6: {
+                                System.out.println("Write down a file name (without file extention)");
+                                input = new Scanner(System.in);
+                                select = input.nextLine();
+                                try {
+                                        rels.writeToFile(select);
+                                }catch (Exception e){
+                                        e.printStackTrace();
+                                }
+                                break;
+                        }
+                        case 0: {
                                 return;
                         }
                 }
@@ -105,7 +127,9 @@ public class Menu {
         System.out.println("2 - Load ‘relationships’");
         System.out.println("3 - Print out people");
         System.out.println("4 - Print out relationships");
-        System.out.println("5 - Quit");
+        System.out.println("5 - Save to file people");
+        System.out.println("6 - Save to file relationships");
+        System.out.println("0 - Quit");
 
         selection = input.nextInt();
         return selection;    

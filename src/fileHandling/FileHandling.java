@@ -1,7 +1,7 @@
 package fileHandling;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,6 +25,12 @@ public class FileHandling {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void writeToFile(String output, String fileName) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName+".txt", Charset.forName("windows-1250")));
+        writer.write(output);
+        writer.close();
     }
 
 }
