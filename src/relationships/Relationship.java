@@ -8,12 +8,21 @@ public class Relationship {
     private Person friend1;
     private Person friend2;
 
+    /**
+     * This method returns a string representation of this object.
+     * @return string
+     */
     @Override
     public String toString() {
         return friend1.getIdPerson() +
                 "," + friend2.getIdPerson();
     }
 
+    /**
+     * This method equals object
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
