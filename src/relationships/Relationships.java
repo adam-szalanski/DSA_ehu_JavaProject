@@ -22,7 +22,7 @@ public final class Relationships {
     private List<Relationship> relations;
 
     /**
-     * Getter for a Relationships class.
+     * Getter for a relations field.
      * @return list of Relationship objects
      */
     public List<Relationship> getRelations() { return relations; }
@@ -56,7 +56,7 @@ public final class Relationships {
     }
 
     /**
-     * This method returns a string representation of this object.
+     * This method overrides default method and returns a string representation of this object.
      * @return string
      */
     @Override

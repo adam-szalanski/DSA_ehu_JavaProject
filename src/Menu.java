@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-
+        /**
+         * This method consist of calls to all functions related to the options presented in menu.
+         * @param args
+         */
 	public static void main(String[] args) {
 
         List<String> strings;
@@ -113,8 +116,12 @@ public class Menu {
         }
 
 }
-	
-	
+
+        /**
+         * This method prints menu options of our programming project.
+         * And reads input from the user.
+         * @return integer
+         */
 	public static int menu() {
 
         int selection;

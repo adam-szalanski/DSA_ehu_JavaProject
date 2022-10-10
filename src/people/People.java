@@ -11,20 +11,38 @@ import java.util.*;
 public final class People {
     public final static String FIRST_LINE_PEOPLE = "idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode";
     private final static String FILENAME = "people";
+
+    /**
+     * Constructor for a People class.
+     */
     public People() {
         this.people = new ArrayList<>();
     }
 
     private List<Person> people;
 
+    /**
+     * Getter for a people field.
+     * @return list of Person type objects.
+     */
     public List<Person> getPeople() {
         return people;
     }
 
+    /**
+     * Setter for a people field.
+     * @param people is list of Person type objects.
+     */
     public void setPeople(List<Person> people) {
         this.people = people;
     }
 
+    /**
+     * This method check if the user ID is already in list of people,
+     * if not - add person from string to list of people
+     * @param data is string containing data for creating a new object of Person class.
+     * @throws ParseException Signals that an error has been reached unexpectedly while parsing.
+     */
     public void addPersonFromString(String data) throws ParseException {
         String idPerson;
         String name;
@@ -40,7 +58,6 @@ public final class People {
 
         String[] splited = data.split(",");
 
-//        System.out.println(splited[0]);
         if(Objects.equals(splited[0], "\n") || Objects.equals(splited[0], "\r"))
             return;
 
@@ -48,7 +65,8 @@ public final class People {
         if(!this.people.isEmpty())
             for(Person p : people)
                 if(p.getIdPerson().compareTo(idPerson)==0)
-                    return; //Person ID already in list
+                    return;
+
         name = splited[1];
         lastname = splited[2];
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -68,6 +86,11 @@ public final class People {
         people.add(newPerson);
     }
 
+    /**
+     * This method finds Person object with corresponding ID in people list.
+     * @param id string
+     * @return Person object
+     */
     public Person findPersonById(String id){
         if(!this.people.isEmpty())
             for(Person p : people)
@@ -76,6 +99,11 @@ public final class People {
         return null;
     }
 
+    /**
+     * This method writes string to given file name.
+     * @param filename string
+     * @throws IOException This throws could occur when writing to a file
+     */
     public void writeToFile(String filename) throws IOException {
         String output = FIRST_LINE_PEOPLE +"\n";
         for(Person p : people)
