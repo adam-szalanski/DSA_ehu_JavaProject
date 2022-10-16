@@ -82,5 +82,4 @@ public class Relationship {
     public void setFriend2(Person friend2) {
         this.friend2 = friend2;
     }
-    // Też ja zmieniający komentarze
 }

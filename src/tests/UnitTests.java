@@ -1,6 +1,8 @@
+import jdk.jfr.Description;
 import org.junit.jupiter.api.*;
 import people.People;
 import people.Person;
+import relationships.Relationship;
 import relationships.Relationships;
 
 import java.text.ParseException;
@@ -81,7 +83,7 @@ public class UnitTests {
 
                 @BeforeAll
                 @DisplayName("Create person for testing")
-                public static void createTestPerson() throws ParseException{
+                public static void initTestPerson() throws ParseException{
                         String idPerson;
                         String name;
                         String lastname;
@@ -118,7 +120,7 @@ public class UnitTests {
 
                 @AfterAll
                 @DisplayName("Delete testing person")
-                public static void deleteTestPerson(){
+                public static void clearTestPerson(){
                         testPerson=null;
                 }
 
@@ -126,7 +128,7 @@ public class UnitTests {
                 @Tag("testCompareEqualPerson")
                 @Order(2)
                 @DisplayName("Test comparing the test person having same data")
-                public void compareEqualTestPerson() throws ParseException{
+                public void testCompareEqualTestPerson() throws ParseException{
                         Person testPerson2;
                         String idPerson;
                         String name;
@@ -167,7 +169,7 @@ public class UnitTests {
                 @Tag("testCompareUnequalPerson")
                 @Order(3)
                 @DisplayName("Test comparing the test person with another different person")
-                public void compareUnequalTestPerson() throws ParseException{
+                public void testCompareUnequalTestPerson() throws ParseException{
                         Person testPerson2;
                         String name;
                         String lastname;
@@ -222,15 +224,76 @@ public class UnitTests {
 
                 @BeforeAll
                 @DisplayName("Creating relationships for testing")
-                public static void createTestRelationships() throws ParseException{
+                public static void initTestRelationships() throws ParseException{
                         testPeople = new People();
                         testPeople.addPersonFromString(TEST_PERSON);
                         testPeople.addPersonFromString(TEST_PERSON2);
                         testRelationships = new Relationships();
                 }
+
+                @AfterAll
+                @DisplayName("Deleting relationships used for testing")
+                public static void clearTestRelationships(){
+                        testPeople = null;
+                        testRelationships = null;
+                }
+
+                @Test
+                @Tag("addRelationship")
+                @Order(1)
+                @DisplayName("Adding a relationship")
+                public void testAddRelationship(){
+                        testRelationships.addRelationship(TEST_RELATIONSHIP,testPeople);
+                        assertFalse(testRelationships.getRelations().isEmpty());
+                }
+
+                @Test
+                @Tag("writeRelationships")
+                @Order(2)
+                @DisplayName("Writing relationships as string")
+                public void testToString(){
+                        testRelationships.addRelationship(TEST_RELATIONSHIP,testPeople);
+                        assertEquals((Relationships.FIRST_LINE_RELATIONSHIPS + TEST_RELATIONSHIP), testRelationships.toString());
+                }
+
+
+                @Nested
+                @Order(5)
+                @Description("RELATION. Nested class for testing Relation features")
+                class RelationTest{
+                        public static Relationship testRelationship;
+
+                        @BeforeAll
+                        @Description("Create test relationship")
+                        public static void initTestRelationship(){
+                                testRelationship = RelationshipsTest.testRelationships.getRelations().get(0);
+                        }
+
+                        @AfterAll
+                        @Description("Remove test relationship")
+                        public static void clearTestRelationship(){
+                                testRelationship = null;
+                        }
+
+                        @Test
+                        @Tag("toString")
+                        @Order(1)
+                        @DisplayName("Check if toString is formatting correctly")
+                        public void testToString(){
+                                assertEquals(RelationshipsTest.TEST_RELATIONSHIP,testRelationship.toString());
+                        }
+
+                        @Test
+                        @Tag("equals")
+                        @Order(2)
+                        @DisplayName("Check if equals is comparing properly")
+                        public void testEquals(){
+                                String[] ids = TEST_RELATIONSHIP.split(",");
+                                assertEquals(testRelationship, new Relationship(testPeople.findPersonById(ids[0]), testPeople.findPersonById(ids[1])));
+                        }
+                }
         }
 }
-        //TODO: nested class Relationships with nested class Relation and their tests
 
         //TODO: fileHandling tests
 
