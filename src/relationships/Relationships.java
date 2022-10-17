@@ -80,4 +80,26 @@ public final class Relationships {
         else
             FileHandling.writeToFile(output,FILENAME);
     }
+
+    /**
+     * This method finds every relationship containing passed id
+     * @param id String
+     * @return List<Relationship> List of relationships containing that id
+     */
+    public List<Relationship> findRelationshipsById(String id){
+        List<Relationship> found = new ArrayList<>();
+        for(Relationship r : this.relations){
+            if (r.getFriend1().getIdPerson().equals(id)||r.getFriend2().getIdPerson().equals(id))
+                found.add(r);
+        }
+        return found;
+    }
+
+    /**
+     * Removes passed relationship from the list of relationships
+     * @param r Relation
+     */
+    public void deleteRelationship(Relationship r){
+        relations.remove(r);
+    }
 }
