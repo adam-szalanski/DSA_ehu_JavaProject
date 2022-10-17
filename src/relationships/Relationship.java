@@ -4,6 +4,12 @@ import people.Person;
 
 import java.util.Objects;
 
+/**
+ * This class represents a single relationship between two people.
+ * Consists of two objects of type Person.
+ * @field  friend1  an absolute URL giving the base location of the image
+ * @field  friend2 the location of the image, relative to the url argument
+ */
 public class Relationship {
     private Person friend1;
     private Person friend2;

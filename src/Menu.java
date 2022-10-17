@@ -3,9 +3,14 @@ import fileHandling.FileHandling;
 import relationships.Relationship;
 import relationships.Relationships;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * This class is currently the main class of the projects.
+ * It creates the menu that allows user to insert People and Relationships and view them.
+ */
 public class Menu {
         /**
          * This method consist of calls to all functions related to the options presented in menu.
@@ -91,7 +96,7 @@ public class Menu {
                                 input = new Scanner(System.in);
                                 select = input.nextLine();
                                 try {
-                                        ppl.writeToFile(select);
+                                        ppl.writeToFile(select+".txt");
                                 }catch (Exception e){
                                         e.printStackTrace();
                                 }
@@ -102,7 +107,7 @@ public class Menu {
                                 input = new Scanner(System.in);
                                 select = input.nextLine();
                                 try {
-                                        rels.writeToFile(select);
+                                        rels.writeToFile(select+".txt");
                                 }catch (Exception e){
                                         e.printStackTrace();
                                 }
@@ -118,28 +123,33 @@ public class Menu {
 }
 
         /**
-         * This method prints menu options of our programming project.
-         * And reads input from the user.
+         * This method prints menu options of our programming project and reads input from the user.
          * @return integer
          */
 	public static int menu() {
 
         int selection;
-        Scanner input = new Scanner(System.in);
+        try {
+                Scanner input = new Scanner(System.in);
 
-        System.out.println("");
-        System.out.println("Choose from these choices");
-        System.out.println("-------------------------\n");
-        System.out.println("1 - Load ‘people’ into the network");
-        System.out.println("2 - Load ‘relationships’");
-        System.out.println("3 - Print out people");
-        System.out.println("4 - Print out relationships");
-        System.out.println("5 - Save to file people");
-        System.out.println("6 - Save to file relationships");
-        System.out.println("0 - Quit");
+                System.out.println("");
+                System.out.println("Choose from these choices");
+                System.out.println("-------------------------\n");
+                System.out.println("1 - Load ‘people’ into the network");
+                System.out.println("2 - Load ‘relationships’");
+                System.out.println("3 - Print out people");
+                System.out.println("4 - Print out relationships");
+                System.out.println("5 - Save to file people");
+                System.out.println("6 - Save to file relationships");
+                System.out.println("0 - Quit");
 
-        selection = input.nextInt();
-        return selection;    
+                selection = input.nextInt();
+                return selection;
+        }
+        catch(InputMismatchException e){
+                System.out.println("Bad input");
+        }
+            return 0;
     }
 
 

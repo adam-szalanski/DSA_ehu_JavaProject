@@ -1,15 +1,18 @@
+import fileHandling.FileHandling;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.*;
+
 import people.People;
 import people.Person;
 import relationships.Relationship;
 import relationships.Relationships;
 
+import java.io.*;
+
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,6 +24,100 @@ public class UnitTests {
         public void done() {
                 System.out.println("done!");
         }
+
+        @Nested
+        @DisplayName("MENU")
+        class MenuTests {
+
+                @Test
+                @DisplayName("Testing menu() method with valid and not valid data")
+                public void MenuTest() {
+                        Menu inputOutput= new Menu();
+                        String input = "1";
+                        InputStream in = new ByteArrayInputStream(input.getBytes());
+                        System.setIn(in);
+                        assertEquals(1, inputOutput.menu());
+
+
+                        inputOutput = new Menu();
+                        input = "dasdas";
+                        in = new ByteArrayInputStream(input.getBytes());
+                        System.setIn(in);
+                        assertEquals(0, inputOutput.menu());
+                }
+
+                @Test
+                @DisplayName("Testing if main() method works well, menu in it is tested in other tests")
+                public void MainTest( ){
+                        Menu inputOutput= new Menu();
+                        String input = "0";
+                        InputStream in = new ByteArrayInputStream(input.getBytes());
+                        System.setIn(in);
+                        inputOutput.main(new String[0]);
+                }
+        }
+        @Nested
+        @DisplayName("MENU")
+        class FileHandlingTest {
+
+                String data;
+
+                @Test
+                @DisplayName("Testing reading from file handling")
+                public void ReadTest() throws FileNotFoundException {
+
+                        FileHandling files = new FileHandling();
+                        File file = new File("aaa.txt");
+                        List<String> linesFromFile = new ArrayList<>();
+                        Scanner input2program = new Scanner(file,"windows-1250");
+                        String data = input2program.nextLine();
+
+                        while (input2program.hasNextLine()){
+                                data = input2program.nextLine();
+                                linesFromFile.add(data);
+                        }
+                        input2program.close();
+
+                        assertEquals(linesFromFile, FileHandling.readFile("aaa.txt"));
+                }
+
+                @Test
+                @DisplayName("Testing not existing file handling")
+                public void File() throws FileNotFoundException {
+                        Throwable exception = assertThrows(FileNotFoundException.class, () -> FileHandling.readFile("bbb.txt"));
+                        assertEquals("Such file does not exist", exception.getMessage());
+                }
+
+                
+                @Test
+                @DisplayName("Testing write to file handling for different files")
+                public void WriteTest() throws IOException {
+
+                        FileHandling files = new FileHandling();
+
+                        File file = new File("df_friends_55L136.txt");
+                        File file2 = new File("testfile.txt");
+
+                        Scanner input2program = new Scanner(file,"windows-1250");
+                        String data;
+                        String longer = "";
+
+                        while (input2program.hasNextLine()){
+                                data = input2program.nextLine();
+                                longer = longer + data + "\n";
+                        }
+                        input2program.close();
+
+                        FileHandling.writeToFile(longer, "testfile.txt");
+
+                        assertEquals(FileHandling.readFile("testfile.txt"), FileHandling.readFile("df_friends_55L136.txt"));
+
+                        file2.delete();
+                }
+                
+                
+        }
+
 
         @Nested
         @DisplayName("PEOPLE. Nested class for testing features of People class")
@@ -294,8 +391,3 @@ public class UnitTests {
                 }
         }
 }
-
-        //TODO: fileHandling tests
-
-        //TODO: Menu tests
-
