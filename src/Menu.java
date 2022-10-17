@@ -36,7 +36,7 @@ public class Menu {
 
                 switch (userChoice){
                         case 1: {
-                                System.out.println("Write down a file name (without file extention)");
+                                System.out.println("Write down a file name (without file extension):");
                                 input = new Scanner(System.in);
                                 select = input.nextLine();
 
@@ -58,7 +58,7 @@ public class Menu {
                                 break;
                         }
                         case 2: {
-                                System.out.println("Write down a file name (without file extention)");
+                                System.out.println("Write down a file name (without file extension):");
                                 input = new Scanner(System.in);
                                 select = input.nextLine();
 
@@ -92,7 +92,7 @@ public class Menu {
                                 break;
                         }
                         case 5: {
-                                System.out.println("Write down a file name (without file extention)");
+                                System.out.println("Write down a file name (without file extension):");
                                 input = new Scanner(System.in);
                                 select = input.nextLine();
                                 try {
@@ -103,7 +103,7 @@ public class Menu {
                                 break;
                         }
                         case 6: {
-                                System.out.println("Write down a file name (without file extention)");
+                                System.out.println("Write down a file name (without file extension):");
                                 input = new Scanner(System.in);
                                 select = input.nextLine();
                                 try {
@@ -111,6 +111,32 @@ public class Menu {
                                 }catch (Exception e){
                                         e.printStackTrace();
                                 }
+                                break;
+                        }
+                        case 7: {
+                                System.out.println("Write down an ID of the person you want to delete:");
+                                input = new Scanner(System.in);
+                                select = input.nextLine();
+
+                                ppl.removePersonById(select);
+                                List<Relationship> listOfRelationshipsForDelate = rels.findRelationshipsById(select);
+                                for(Relationship relationship: listOfRelationshipsForDelate){
+                                        rels.deleteRelationship(relationship);
+                                }
+
+                                break;
+                        }
+                        case 8: {
+                                System.out.println("To delete relationship between two people, write down their IDs:");
+                                Scanner input1 = new Scanner(System.in);
+                                String select1 = input1.nextLine();
+                                Scanner input2 = new Scanner(System.in);
+                                String select2 = input2.nextLine();
+
+                                Relationship relationshipForDelate = rels.findRelationshipsByIDs(select1, select2);
+
+                                rels.deleteRelationship(relationshipForDelate);
+
                                 break;
                         }
                         case 0: {
@@ -141,7 +167,9 @@ public class Menu {
                 System.out.println("4 - Print out relationships");
                 System.out.println("5 - Save to file people");
                 System.out.println("6 - Save to file relationships");
-                System.out.println("0 - Quit");
+                System.out.println("7 - Delete person and relations related to it");
+                System.out.println("8 - Delete relationship");
+               System.out.println("0 - Quit");
 
                 selection = input.nextInt();
                 return selection;

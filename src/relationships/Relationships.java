@@ -102,4 +102,21 @@ public final class Relationships {
     public void deleteRelationship(Relationship r){
         relations.remove(r);
     }
+
+    /**
+     * This method finds relationship containing passed IDs
+     * @param id1 String
+     * @param id2 String
+     * @return Relationship containing passed IDs
+     */
+    public Relationship findRelationshipsByIDs(String id1, String id2) {
+        Relationship found = null;
+        for(Relationship r : this.relations){
+            if (r.getFriend1().getIdPerson().equals(id1)&&r.getFriend2().getIdPerson().equals(id2)||r.getFriend1().getIdPerson().equals(id2)&&r.getFriend2().getIdPerson().equals(id1))
+                found=r;
+        }
+        return found;
+
+    }
+
 }
