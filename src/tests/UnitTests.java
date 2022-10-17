@@ -354,9 +354,47 @@ public class UnitTests {
                         assertEquals((Relationships.FIRST_LINE_RELATIONSHIPS + TEST_RELATIONSHIP), testRelationships.toString());
                 }
 
+                @Test
+                @Tag("findRelationships")
+                @Order(3)
+                @DisplayName("Find the same relationship for both test persons")
+                public void testFindRelationships(){
+                        testRelationships.addRelationship(TEST_RELATIONSHIP,testPeople);
+                        List<Relationship> testList1 = testRelationships.findRelationshipsById(testPeople.getPeople().get(0).getIdPerson());
+                        List<Relationship> testList2 = testRelationships.findRelationshipsById(testPeople.getPeople().get(1).getIdPerson());
+                        assertFalse(testList1.isEmpty());
+                        assertFalse(testList2.isEmpty());
+                        assertEquals(testList1,testList2);
+                }
+
+                @Test
+                @Tag("findRelationships")
+                @Order(4)
+                @DisplayName("Find the same relationship for both test persons")
+                public void testFindSpecificRelationships(){
+                        testRelationships.addRelationship(TEST_RELATIONSHIP,testPeople);
+                        String[] ids = TEST_RELATIONSHIP.split(",");
+                        Relationship found1 = testRelationships.findRelationshipsByIDs(ids[0],ids[1]);
+                        Relationship found2 = testRelationships.findRelationshipsByIDs(ids[1],ids[0]);
+                        assertNotNull(found1);
+                        assertNotNull(found2);
+                        assertEquals(found1,found2);
+                }
+
+                @Test
+                @Tag("deleteRelationshipByBothIds")
+                @Order(5)
+                @DisplayName("Delete relationship of test persons")
+                public void testDeleteRelationships(){
+                        testRelationships.addRelationship(TEST_RELATIONSHIP,testPeople);
+                        List<Relationship> testList1 = testRelationships.findRelationshipsById(testPeople.getPeople().get(0).getIdPerson());
+                        testRelationships.deleteRelationship(testList1.get(0));
+                        assertEquals(0,testRelationships.getRelations().size());
+                        assertEquals(0,testRelationships.findRelationshipsById(testPeople.getPeople().get(0).getIdPerson()).size());
+                }
 
                 @Nested
-                @Order(5)
+                @Order(6)
                 @Description("RELATION. Nested class for testing Relation features")
                 class RelationTest{
                         public static Relationship testRelationship;
