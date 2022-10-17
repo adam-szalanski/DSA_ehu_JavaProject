@@ -1,0 +1,158 @@
+\hypertarget{classpeople_1_1_people}{}\doxysection{people.\+People Class Reference}
+\label{classpeople_1_1_people}\index{people.People@{people.People}}
+
+
+Collaboration diagram for people.\+People\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{dc/d1a/classpeople_1_1_people__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpeople_1_1_people_a18fb1b75922291a01a64bcd3dc18a765}{People}} ()
+\item 
+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ \mbox{\hyperlink{classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c}{get\+People}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ab9866f4d6cebcc5a5a9453188e9227bb}{set\+People}} (List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a0821174417701bc4962478ace48601a7}{add\+Person\+From\+String}} (String data)  throws Parse\+Exception 
+\item 
+\mbox{\hyperlink{classpeople_1_1_person}{Person}} \mbox{\hyperlink{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5}{find\+Person\+By\+Id}} (String id)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c}{write\+To\+File}} (String filename)  throws IOException 
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \mbox{\hyperlink{classpeople_1_1_people_a9d6a96f4e4093e899d7cc694a0908210}{FIRST\+\_\+\+LINE\+\_\+\+PEOPLE}} = \char`\"{}idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpeople_1_1_people_a18fb1b75922291a01a64bcd3dc18a765}\label{classpeople_1_1_people_a18fb1b75922291a01a64bcd3dc18a765}} 
+\index{people.People@{people.People}!People@{People}}
+\index{People@{People}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{People()}{People()}}
+{\footnotesize\ttfamily people.\+People.\+People (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for a \mbox{\hyperlink{classpeople_1_1_people}{People}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpeople_1_1_people_a0821174417701bc4962478ace48601a7}\label{classpeople_1_1_people_a0821174417701bc4962478ace48601a7}} 
+\index{people.People@{people.People}!addPersonFromString@{addPersonFromString}}
+\index{addPersonFromString@{addPersonFromString}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{addPersonFromString()}{addPersonFromString()}}
+{\footnotesize\ttfamily void people.\+People.\+add\+Person\+From\+String (\begin{DoxyParamCaption}\item[{String}]{data }\end{DoxyParamCaption}) throws Parse\+Exception}
+
+This method check if the user ID is already in list of people, if not -\/ add person from string to list of people 
+\begin{DoxyParams}{Parameters}
+{\em data} & is string containing data for creating a new object of \mbox{\hyperlink{classpeople_1_1_person}{Person}} class. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Parse\+Exception} & Signals that an error has been reached unexpectedly while parsing. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{d8/d1b/classpeople_1_1_people_a0821174417701bc4962478ace48601a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5}\label{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5}} 
+\index{people.People@{people.People}!findPersonById@{findPersonById}}
+\index{findPersonById@{findPersonById}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findPersonById()}{findPersonById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpeople_1_1_person}{Person}} people.\+People.\+find\+Person\+By\+Id (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method finds \mbox{\hyperlink{classpeople_1_1_person}{Person}} object with corresponding ID in people list. 
+\begin{DoxyParams}{Parameters}
+{\em id} & string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classpeople_1_1_person}{Person}} object 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1b/classpeople_1_1_people_a98370d0edbf457a657735195d163ace5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c}\label{classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c}} 
+\index{people.People@{people.People}!getPeople@{getPeople}}
+\index{getPeople@{getPeople}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{getPeople()}{getPeople()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people.\+People.\+get\+People (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for a people field. \begin{DoxyReturn}{Returns}
+list of \mbox{\hyperlink{classpeople_1_1_person}{Person}} type objects. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{d8/d1b/classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ab9866f4d6cebcc5a5a9453188e9227bb}\label{classpeople_1_1_people_ab9866f4d6cebcc5a5a9453188e9227bb}} 
+\index{people.People@{people.People}!setPeople@{setPeople}}
+\index{setPeople@{setPeople}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{setPeople()}{setPeople()}}
+{\footnotesize\ttfamily void people.\+People.\+set\+People (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$}]{people }\end{DoxyParamCaption})}
+
+Setter for a people field. 
+\begin{DoxyParams}{Parameters}
+{\em people} & is list of \mbox{\hyperlink{classpeople_1_1_person}{Person}} type objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c}\label{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c}} 
+\index{people.People@{people.People}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void people.\+People.\+write\+To\+File (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption}) throws IOException}
+
+This method writes string to given file name. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & This throws could occur when writing to a file \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d1b/classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{d8/d1b/classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpeople_1_1_people_a9d6a96f4e4093e899d7cc694a0908210}\label{classpeople_1_1_people_a9d6a96f4e4093e899d7cc694a0908210}} 
+\index{people.People@{people.People}!FIRST\_LINE\_PEOPLE@{FIRST\_LINE\_PEOPLE}}
+\index{FIRST\_LINE\_PEOPLE@{FIRST\_LINE\_PEOPLE}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{FIRST\_LINE\_PEOPLE}{FIRST\_LINE\_PEOPLE}}
+{\footnotesize\ttfamily final String people.\+People.\+FIRST\+\_\+\+LINE\+\_\+\+PEOPLE = \char`\"{}idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projekty/\+DSA\+\_\+ehu\+\_\+\+Java\+Project/src/people/\mbox{\hyperlink{_people_8java}{People.\+java}}\end{DoxyCompactItemize}
