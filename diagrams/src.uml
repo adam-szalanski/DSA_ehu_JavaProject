@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/user/Desktop/projekty/DSA_ehu_JavaProject/src</OriginalElement>
+  <nodes>
+    <node x="194.4258289703315" y="890.4956369982548">people.People</node>
+    <node x="447.5619546247818" y="890.4956369982549">relationships.Relationship</node>
+    <node x="724.4886561954625" y="881.4746945898778">fileHandling.FileHandling</node>
+    <node x="-447.148342059337" y="766.8586387434556">people.Person</node>
+    <node x="288.22862129144835" y="1190.2338568935427">relationships.Relationships</node>
+    <node x="361.27028795811515" y="1530.2338568935427">Menu</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="relationships.Relationships" target="people.Person" relationship="DEPENDENCY">
+      <point x="3.787085516364641E-4" y="-137.99985689354276" />
+      <point x="444.729" y="1168.0" />
+      <point x="270.729" y="1168.0" />
+      <point x="270.729" y="1197.734" />
+      <point x="292.00034205933696" y="6.875361256544238" />
+    </edge>
+    <edge source="people.People" target="fileHandling.FileHandling" relationship="DEPENDENCY">
+      <point x="-53.196828970331495" y="127.00036300174531" />
+      <point x="255.729" y="1499.0" />
+      <point x="828.489" y="1499.0" />
+      <point x="3.438045375787624E-4" y="49.50030541012222" />
+    </edge>
+    <edge source="Menu" target="relationships.Relationship" relationship="DEPENDENCY">
+      <point x="74.5" y="0.0" />
+      <point x="618.7286212914483" y="1579.7338568935427" />
+      <point x="69.66666666666663" y="127.0" />
+    </edge>
+    <edge source="Menu" target="fileHandling.FileHandling" relationship="DEPENDENCY">
+      <point x="-2.8795811516602043E-4" y="-49.499856893542756" />
+      <point x="435.77" y="1499.0" />
+      <point x="828.489" y="1499.0" />
+      <point x="3.438045375787624E-4" y="49.50030541012222" />
+    </edge>
+    <edge source="relationships.Relationships" target="people.People" relationship="DEPENDENCY">
+      <point x="-135.80279232111684" y="-138.0" />
+      <point x="0.0" y="126.99999999999989" />
+    </edge>
+    <edge source="Menu" target="people.People" relationship="CREATE">
+      <point x="-74.5" y="15.000143106457244" />
+      <point x="240.729" y="1594.734" />
+      <point x="-68.1968289703315" y="126.99999999999989" />
+    </edge>
+    <edge source="people.People" target="people.Person" relationship="CREATE">
+      <point x="-114.5" y="0.0" />
+      <point x="292.0" y="-173.3630017452009" />
+    </edge>
+    <edge source="relationships.Relationships" target="relationships.Relationship" relationship="TO_MANY">
+      <point x="134.33337870855166" y="-138.0" />
+      <point x="30.000045375218292" y="127.0" />
+    </edge>
+    <edge source="relationships.Relationship" target="people.Person" relationship="TO_ONE">
+      <point x="4.5375218292065256E-5" y="-126.99963699825491" />
+      <point x="549.062" y="814.0" />
+      <point x="415.926" y="814.0" />
+      <point x="415.926" y="863.975" />
+      <point x="292.00034205933696" y="-326.88363874345566" />
+    </edge>
+    <edge source="relationships.Relationship" target="people.Person" relationship="DEPENDENCY">
+      <point x="4.5375218292065256E-5" y="127.0003630017452" />
+      <point x="549.062" y="1168.0" />
+      <point x="270.729" y="1168.0" />
+      <point x="270.729" y="1197.734" />
+      <point x="292.00034205933696" y="6.875361256544238" />
+    </edge>
+    <edge source="Menu" target="people.Person" relationship="DEPENDENCY">
+      <point x="-74.50028795811517" y="1.4310645724435744E-4" />
+      <point x="270.729" y="1579.734" />
+      <point x="270.729" y="1197.734" />
+      <point x="292.00034205933696" y="6.875361256544238" />
+    </edge>
+    <edge source="relationships.Relationships" target="fileHandling.FileHandling" relationship="DEPENDENCY">
+      <point x="3.787085516364641E-4" y="138.00014310645724" />
+      <point x="444.729" y="1499.0" />
+      <point x="828.489" y="1499.0" />
+      <point x="3.438045375787624E-4" y="49.50030541012222" />
+    </edge>
+    <edge source="Menu" target="relationships.Relationships" relationship="CREATE">
+      <point x="-15.000287958115166" y="-49.5" />
+      <point x="-23.958621291448367" y="138.0" />
+    </edge>
+    <edge source="people.People" target="people.Person" relationship="TO_MANY">
+      <point x="114.50017102966848" y="3.6300174519965367E-4" />
+      <point x="430.926" y="1017.496" />
+      <point x="430.926" y="814.0" />
+      <point x="415.926" y="814.0" />
+      <point x="415.926" y="863.975" />
+      <point x="292.00034205933696" y="-326.88363874345566" />
+    </edge>
+    <edge source="relationships.Relationships" target="relationships.Relationship" relationship="CREATE">
+      <point x="119.33337870855166" y="-138.0" />
+      <point x="15.000045375218292" y="127.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6481900452488688" showDependencies="true" x="242.5" y="1198.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
