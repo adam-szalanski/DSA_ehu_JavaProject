@@ -1,0 +1,85 @@
+\hypertarget{classrelationships_1_1_relationships}{}\doxysection{relationships.\+Relationships Class Reference}
+\label{classrelationships_1_1_relationships}\index{relationships.Relationships@{relationships.Relationships}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrelationships_1_1_relationships_abd9a981f197d41b3354c6637be315786}{Relationships}} ()
+\item 
+List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ \mbox{\hyperlink{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}{get\+Relations}} ()
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74}{add\+Relationship}} (String list, \mbox{\hyperlink{classpeople_1_1_people}{People}} ppl)
+\item 
+String \mbox{\hyperlink{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}{to\+String}} ()
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}{write\+To\+File}} (String filename)  throws IOException 
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a6ba905bc63f76addd1fdfd35b4746ada}\label{classrelationships_1_1_relationships_a6ba905bc63f76addd1fdfd35b4746ada}} 
+static final String {\bfseries FIRST\+\_\+\+LINE\+\_\+\+RELATIONSHIPS} = \char`\"{}friend1,friend2\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_abd9a981f197d41b3354c6637be315786}\label{classrelationships_1_1_relationships_abd9a981f197d41b3354c6637be315786}} 
+\index{relationships.Relationships@{relationships.Relationships}!Relationships@{Relationships}}
+\index{Relationships@{Relationships}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{Relationships()}{Relationships()}}
+{\footnotesize\ttfamily relationships.\+Relationships.\+Relationships (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for a \mbox{\hyperlink{classrelationships_1_1_relationships}{Relationships}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74}\label{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74}} 
+\index{relationships.Relationships@{relationships.Relationships}!addRelationship@{addRelationship}}
+\index{addRelationship@{addRelationship}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{addRelationship()}{addRelationship()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+add\+Relationship (\begin{DoxyParamCaption}\item[{String}]{list,  }\item[{\mbox{\hyperlink{classpeople_1_1_people}{People}}}]{ppl }\end{DoxyParamCaption})}
+
+This method check if relationship for two people exists. If not -\/ create relationship between two people and add this relationship to list of relationships. 
+\begin{DoxyParams}{Parameters}
+{\em list} & This parameter is string list which consists two user IDs. \\
+\hline
+{\em ppl} & This parameter is People type object which have list of all users \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}\label{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}} 
+\index{relationships.Relationships@{relationships.Relationships}!getRelations@{getRelations}}
+\index{getRelations@{getRelations}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{getRelations()}{getRelations()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ relationships.\+Relationships.\+get\+Relations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for a relations field. \begin{DoxyReturn}{Returns}
+list of \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}\label{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}} 
+\index{relationships.Relationships@{relationships.Relationships}!toString@{toString}}
+\index{toString@{toString}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String relationships.\+Relationships.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method overrides default method and returns a string representation of this object. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}\label{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}} 
+\index{relationships.Relationships@{relationships.Relationships}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+write\+To\+File (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption}) throws IOException}
+
+This method writes string to given file name. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & This throws could occur when writing to a file \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projekty/\+DSA\+\_\+ehu\+\_\+\+Java\+Project/src/relationships/Relationships.\+java\end{DoxyCompactItemize}
