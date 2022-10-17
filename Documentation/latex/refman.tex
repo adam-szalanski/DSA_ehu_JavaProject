@@ -183,7 +183,21 @@
   % re-enable anchors again
   \hypersetup{pageanchor=true}
   \chapter{User Documentation}
-  The aim of this programming project is to manage a social network. This social network is formed by people that may be linked among each other if there is a friendship relationship among them.
+The aim of this programming project is to manage a social network. This social network is formed by people that may be linked among each other if there is a friendship relationship between them.
+
+If one runs program, menu options are displayed, where one can choose loading data from file with people, file with realtionships between people, displaying loaded data, saving current data to new files, deleting people (including all of their relationships) and deleting particular relationship.
+
+One has to type file name without '.txt' extension if decides to load data from file with people or from file with relationships. \\
+If one decides to display data from people or relationships files, data will be listed on screen.\\
+One has to type file name without '.txt' extension when decides to save current data. If file has already existed, it will be overwritten.\\
+One has to type person's ID if decides to delete person from data. All relationships that include this ID will be removed.\\
+Deleting relationship between two people from data requires typing their IDs. \\
+
+This program is protected from invalid input:\\
+One cannot input string in menu options. Exception with message "Bad input" will appear on screen, but menu will reload.\\
+Unexisting files cannot be loaded. Error "Such file does not exist" will be displayed, but program will not crash.\\
+Unexisting person cannot be deleted. Exception "Person with that id does not exist" is thrown, but it doesn't interrupt the program.\\
+Program doesn't crash if one tries to delete unexisting relationship.
 %--- Begin generated contents ---
 \chapter{Namespace Index}
 \input{namespaces}
@@ -213,7 +227,7 @@
 \input{d7/d58/_unit_tests_8java}
 %--- End generated contents ---
 % Index
-  \backmatterzz
+  \backmatter
   \newpage
   \phantomsection
   \clearemptydoublepage
