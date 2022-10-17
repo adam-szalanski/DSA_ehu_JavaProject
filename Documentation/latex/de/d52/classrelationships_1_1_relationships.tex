@@ -2,11 +2,12 @@
 \label{classrelationships_1_1_relationships}\index{relationships.Relationships@{relationships.Relationships}}
 
 
-Collaboration diagram for relationships.\+Relationships\+:\nopagebreak
+Collaboration diagram for relationships.\+Relationships\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=293pt]{db/da0/classrelationships_1_1_relationships__coll__graph}
+\includegraphics[width=303pt]{db/da0/classrelationships_1_1_relationships__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -21,6 +22,12 @@ void \mbox{\hyperlink{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b5
 String \mbox{\hyperlink{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}{to\+String}} ()
 \item 
 void \mbox{\hyperlink{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}{write\+To\+File}} (String filename)  throws IOException 
+\item 
+List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ \mbox{\hyperlink{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf}{find\+Relationships\+By\+Id}} (String id)
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9}{delete\+Relationship}} (\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} r)
+\item 
+\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} \mbox{\hyperlink{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8}{find\+Relationships\+By\+IDs}} (String id1, String id2)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -64,6 +71,71 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=333pt]{de/d52/classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9}\label{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9}} 
+\index{relationships.Relationships@{relationships.Relationships}!deleteRelationship@{deleteRelationship}}
+\index{deleteRelationship@{deleteRelationship}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{deleteRelationship()}{deleteRelationship()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+delete\+Relationship (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}}}]{r }\end{DoxyParamCaption})}
+
+Removes passed relationship from the list of relationships 
+\begin{DoxyParams}{Parameters}
+{\em r} & Relation \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{de/d52/classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf}\label{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf}} 
+\index{relationships.Relationships@{relationships.Relationships}!findRelationshipsById@{findRelationshipsById}}
+\index{findRelationshipsById@{findRelationshipsById}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{findRelationshipsById()}{findRelationshipsById()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ relationships.\+Relationships.\+find\+Relationships\+By\+Id (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method finds every relationship containing passed id 
+\begin{DoxyParams}{Parameters}
+{\em id} & String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\+Relationship$>$ List of relationships containing that id 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{de/d52/classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8}\label{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8}} 
+\index{relationships.Relationships@{relationships.Relationships}!findRelationshipsByIDs@{findRelationshipsByIDs}}
+\index{findRelationshipsByIDs@{findRelationshipsByIDs}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{findRelationshipsByIDs()}{findRelationshipsByIDs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} relationships.\+Relationships.\+find\+Relationships\+By\+IDs (\begin{DoxyParamCaption}\item[{String}]{id1,  }\item[{String}]{id2 }\end{DoxyParamCaption})}
+
+This method finds relationship containing passed IDs 
+\begin{DoxyParams}{Parameters}
+{\em id1} & String \\
+\hline
+{\em id2} & String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} containing passed IDs 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{de/d52/classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}\label{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}} 
