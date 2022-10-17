@@ -1,20 +1,14 @@
 import fileHandling.FileHandling;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.*;
-
 import people.People;
 import people.Person;
 import relationships.Relationship;
 import relationships.Relationships;
-
 import java.io.*;
-
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("MAIN CLASS for testing the project")
@@ -160,8 +154,25 @@ public class UnitTests {
                 public void testFindPerson() {
                         assertInstanceOf(Person.class, people.findPersonById(TEST_PERSON_ID));
                 }
-
+                @Test
+                @Tag("deleteExistingPersonById")
+                @Order(5)
+                @DisplayName("Find and delete person from the list of people")
+                public void testDeleteExistingPerson() throws ParseException {
+                        people.addPersonFromString(TEST_PERSON);
+                        people.removePersonById(TEST_PERSON_ID);
+                        assertEquals(0,people.getPeople().size());
                 }
+                @Test
+                @Tag("deleteNonExistingPersonById")
+                @Order(6)
+                @DisplayName("Find and delete person from the list of people")
+                public void testDeleteNonexistingPerson() throws ParseException {
+                        people.addPersonFromString(TEST_PERSON);
+                        people.removePersonById("just a random unexisting id");
+                        assertEquals(1,people.getPeople().size());
+                }
+        }
 
         @Nested
         @DisplayName("PERSON. Nested class for testing features of Person class")

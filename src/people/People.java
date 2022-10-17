@@ -113,6 +113,20 @@ public final class People {
             FileHandling.writeToFile(output,filename);
         else
             FileHandling.writeToFile(output,FILENAME);
+    }
 
+    /**
+     * This method removes person with a certain id from the list of people
+     * If person with that id does not exist, prints out a message
+     * @param id String
+     */
+    public void removePersonById(String id){
+        Person removedPerson = findPersonById(id);
+        if(removedPerson==null)
+            System.out.println("Person with that id does not exist");
+        else {
+            people.remove(removedPerson);
+            System.out.println("Successfully removed person");
+        }
     }
 }
