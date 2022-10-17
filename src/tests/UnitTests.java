@@ -32,41 +32,33 @@ public class UnitTests {
                 @Test
                 @DisplayName("Testing menu() method with valid and not valid data")
                 public void MenuTest() {
-                        Menu inputOutput= new Menu();
                         String input = "1";
                         InputStream in = new ByteArrayInputStream(input.getBytes());
                         System.setIn(in);
-                        assertEquals(1, inputOutput.menu());
+                        assertEquals(1, Menu.menu());
 
-
-                        inputOutput = new Menu();
                         input = "dasdas";
                         in = new ByteArrayInputStream(input.getBytes());
                         System.setIn(in);
-                        assertEquals(0, inputOutput.menu());
+                        assertEquals(0, Menu.menu());
                 }
 
                 @Test
                 @DisplayName("Testing if main() method works well, menu in it is tested in other tests")
                 public void MainTest( ){
-                        Menu inputOutput= new Menu();
                         String input = "0";
                         InputStream in = new ByteArrayInputStream(input.getBytes());
                         System.setIn(in);
-                        inputOutput.main(new String[0]);
+                        Menu.main(new String[0]);
                 }
         }
         @Nested
         @DisplayName("MENU")
         class FileHandlingTest {
-
-                String data;
-
                 @Test
                 @DisplayName("Testing reading from file handling")
                 public void ReadTest() throws FileNotFoundException {
 
-                        FileHandling files = new FileHandling();
                         File file = new File("aaa.txt");
                         List<String> linesFromFile = new ArrayList<>();
                         Scanner input2program = new Scanner(file,"windows-1250");
@@ -83,7 +75,7 @@ public class UnitTests {
 
                 @Test
                 @DisplayName("Testing not existing file handling")
-                public void File() throws FileNotFoundException {
+                public void File() {
                         Throwable exception = assertThrows(FileNotFoundException.class, () -> FileHandling.readFile("bbb.txt"));
                         assertEquals("Such file does not exist", exception.getMessage());
                 }
@@ -92,8 +84,6 @@ public class UnitTests {
                 @Test
                 @DisplayName("Testing write to file handling for different files")
                 public void WriteTest() throws IOException {
-
-                        FileHandling files = new FileHandling();
 
                         File file = new File("df_friends_55L136.txt");
                         File file2 = new File("testfile.txt");
