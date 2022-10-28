@@ -182,3 +182,15 @@ public class Menu {
 
 
 }
+
+/*
+TODO: Milestone 2
+TODO: Get person's relationships by lastname, if lastname appears more than one time, print relationships for each of names
+TODO: Get Person id and Surname by City they were born in
+TODO: Get list of people born between Date1 and Date2, sorted by birthplace, surname, name (only consider year in dates)
+
+TODO: Given a set of identifiers in a file (residential.txt) get name, surname, birthPlace, studiedAt; birthplace matches hometown in file (residential.txt).
+TODO: if hometown/birthplace are unknown, don't affect results
+
+TODO: Two users have the same profile if they have the same collection of favourite movies. Group them together.
+ */
