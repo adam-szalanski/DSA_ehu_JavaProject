@@ -137,6 +137,36 @@ public final class People {
             System.out.println("Person of that lastname wasn't found");
         }
     }
+
+    /**
+     * This method finds a list of people with the passed hometown
+     * @param home String
+     * @return List<Person> list of found people
+     */
+    public List<Person> findPeopleByHome(String home){
+        List<Person> found = new ArrayList<>();
+        for (Person p : this.people){
+            if(p.getHome().equals(home))
+                found.add(p);
+        }
+        return found;
+    }
+    /**
+     * This method prints people with a given hometown
+     * @param home String
+     */
+    public void printPeopleByHome(String home){
+        List<Person> found = findPeopleByHome(home);
+        if(!found.isEmpty()) {
+            System.out.printf("Found following people from %s:%n",home);
+            for (Person p : found) {
+                System.out.printf("%s %s%n",p.getIdPerson(),p.getLastname());
+            }
+        }
+        else{
+            System.out.printf("Found no person from %s%n",home);
+        }
+    }
     /**
      * This method writes string to given file name.
      * @param filename string

@@ -146,6 +146,13 @@ public class Menu {
                                 ppl.printRelationshipsByLastname(select1,rels);
                                 break;
                         }
+                        case 10:{
+                                System.out.println("To show the list of people, write down their hometown:");
+                                Scanner input1 = new Scanner(System.in);
+                                String select1 = input1.nextLine();
+                                ppl.printPeopleByHome(select1);
+                                break;
+                        }
                         case 0: {
                                 return;
                         }
@@ -177,6 +184,7 @@ public class Menu {
                 System.out.println("7 - Delete person and relations related to it");
                 System.out.println("8 - Delete relationship");
                 System.out.println("9 - Show relationships for lastname");
+                System.out.println("10 - Show relationships for lastname");
                System.out.println("0 - Quit");
 
                 selection = input.nextInt();
@@ -193,7 +201,6 @@ public class Menu {
 
 /*
 TODO: Milestone 2
-TODO: Get Person id and Surname by City they were born in
 TODO: Get list of people born between Date1 and Date2, sorted by birthplace, surname, name (only consider year in dates)
 
 TODO: Given a set of identifiers in a file (residential.txt) get name, surname, birthPlace, studiedAt; birthplace matches hometown in file (residential.txt).
