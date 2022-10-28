@@ -139,6 +139,13 @@ public class Menu {
 
                                 break;
                         }
+                        case 9:{
+                                System.out.println("To show relationship of the person, write down their lastname:");
+                                Scanner input1 = new Scanner(System.in);
+                                String select1 = input1.nextLine();
+                                ppl.printRelationshipsByLastname(select1,rels);
+                                break;
+                        }
                         case 0: {
                                 return;
                         }
@@ -169,6 +176,7 @@ public class Menu {
                 System.out.println("6 - Save to file relationships");
                 System.out.println("7 - Delete person and relations related to it");
                 System.out.println("8 - Delete relationship");
+                System.out.println("9 - Show relationships for lastname");
                System.out.println("0 - Quit");
 
                 selection = input.nextInt();
@@ -185,7 +193,6 @@ public class Menu {
 
 /*
 TODO: Milestone 2
-TODO: Get person's relationships by lastname, if lastname appears more than one time, print relationships for each of names
 TODO: Get Person id and Surname by City they were born in
 TODO: Get list of people born between Date1 and Date2, sorted by birthplace, surname, name (only consider year in dates)
 

@@ -1,6 +1,8 @@
 package people;
 
 import fileHandling.FileHandling;
+import relationships.Relationship;
+import relationships.Relationships;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -99,6 +101,42 @@ public final class People {
         return null;
     }
 
+    /**
+     * This method finds List of Person objects with corresponding surname in people list.
+     * @param surname string
+     * @return List<Person> object
+     */
+    public List<Person> findPersonBySurname(String surname){
+        List<Person> found = new ArrayList<>();
+        if(!this.people.isEmpty())
+            for(Person p : people)
+                if(p.getLastname().compareTo(surname)==0)
+                    found.add(p);
+        return found;
+    }
+
+    /**
+     * This method prints relationships of people with a given lastname
+     * @param lastname String
+     * @param relationships Relationships
+     */
+    public void printRelationshipsByLastname(String lastname, Relationships relationships){
+        List<Person> persons = findPersonBySurname(lastname);
+        if(!persons.isEmpty()){
+            for(Person p : persons){
+                List<Relationship> relations = relationships.findRelationshipsById(p.getIdPerson());
+                System.out.printf("Relationships of %s %s:%n",p.getLastname(),p.getName());
+                for(Relationship r : relations){
+                    if (r.getFriend1()==p)
+                        System.out.printf("%s %s%n",r.getFriend2().getName(),r.getFriend2().getLastname());
+                    else
+                        System.out.printf("%s %s%n",r.getFriend1().getName(),r.getFriend1().getLastname());
+                }
+            }
+        }else{
+            System.out.println("Person of that lastname wasn't found");
+        }
+    }
     /**
      * This method writes string to given file name.
      * @param filename string
