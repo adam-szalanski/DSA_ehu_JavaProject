@@ -5,6 +5,7 @@ import relationships.Relationship;
 import relationships.Relationships;
 
 import java.io.IOException;
+import java.lang.invoke.CallSite;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -13,6 +14,14 @@ import java.util.*;
 public final class People {
     public final static String FIRST_LINE_PEOPLE = "idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode";
     private final static String FILENAME = "people";
+    private final static String DASHES = "-------------------------------------------------------------" +
+            "-------------------------------------------------------------" +
+            "-------------------------------------------------------------" +
+            "-------------------------------------------------------------" +
+            "-------------------------------------------------------------" +
+            "-------------------------------------------------------------" +
+            "-------------------------------------------------------------" +
+            "-------------------------------------------------------------";
 
     /**
      * Constructor for a People class.
@@ -126,11 +135,13 @@ public final class People {
             for(Person p : persons){
                 List<Relationship> relations = relationships.findRelationshipsById(p.getIdPerson());
                 System.out.printf("Relationships of %s %s:%n",p.getLastname(),p.getName());
+                String line = String.format("%-30.30s %-30.30s","surname","name");
+                System.out.printf("%s%s%n",line,dashLineFormatter(line));
                 for(Relationship r : relations){
                     if (r.getFriend1()==p)
-                        System.out.printf("%s %s%n",r.getFriend2().getName(),r.getFriend2().getLastname());
+                        System.out.printf("%-30.30s %-30.30s%n",r.getFriend2().getName(),r.getFriend2().getLastname());
                     else
-                        System.out.printf("%s %s%n",r.getFriend1().getName(),r.getFriend1().getLastname());
+                        System.out.printf("%-30.30s %-30.30s%n",r.getFriend1().getName(),r.getFriend1().getLastname());
                 }
             }
         }else{
@@ -159,14 +170,61 @@ public final class People {
         List<Person> found = findPeopleByHome(home);
         if(!found.isEmpty()) {
             System.out.printf("Found following people from %s:%n",home);
+            String line = String.format("%-30.30s %-30.30s%n","id","surname");
+            System.out.printf("%s%s%n",line,dashLineFormatter(line));
             for (Person p : found) {
-                System.out.printf("%s %s%n",p.getIdPerson(),p.getLastname());
+                System.out.printf("%-30.30s %-30.30s%n",p.getIdPerson(),p.getLastname());
             }
         }
         else{
             System.out.printf("Found no person from %s%n",home);
         }
     }
+    /**
+     * This method finds a list of people born between passed years
+     * @param yearMin int
+     * @param yearMax int
+     * @return List<Person> list of found people
+     */
+    public List<Person> findPeopleBornBetween(int yearMin, int yearMax){
+        List<Person> found = new ArrayList<>();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+        try {
+            Date startRange = sdf.parse("01-01-" + yearMin);
+            Date endRange = sdf.parse("01-01-" + yearMax);
+            for (Person p : this.people) {
+                if (!(p.getBirthdate().before(startRange) || p.getBirthdate().after(endRange)))
+                    found.add(p);
+            }
+        }catch (ParseException e){
+            e.printStackTrace();
+        }
+        return found;
+    }
+
+    /**
+     * This method prints people born between passed years
+     * @param yearMin int
+     * @param yearMax int
+     */
+    public void printPeopleBornBetween(int yearMin, int yearMax) {
+        List<Person> found = findPeopleBornBetween(yearMin,yearMax);
+        if(!found.isEmpty()) {
+            System.out.printf("Found following people born between years %d and %d:%n%n",yearMin,yearMax);
+            String line = String.format("%-30.30s %-30.30s %-30.30s %-30.30s%n","id","surname","name","birthplace");
+            System.out.printf("%s%s%n",line,dashLineFormatter(line));
+            found.sort(Comparator.comparing(Person::getBirthplace)
+                    .thenComparing(Person::getLastname)
+                    .thenComparing(Person::getName));
+            for (Person p : found) {
+                System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s%n",p.getIdPerson(),p.getLastname(),p.getName(),p.getBirthplace());
+            }
+        }
+        else{
+            System.out.printf("Found no person born between years %d and %d:%n",yearMin,yearMax);
+        }
+    }
+
     /**
      * This method writes string to given file name.
      * @param filename string
@@ -197,4 +255,9 @@ public final class People {
             System.out.println("Successfully removed person");
         }
     }
+
+    public String dashLineFormatter(String line){
+        return String.format("%"+line.length()+"."+line.length()+"s%n",DASHES);
+    }
+
 }

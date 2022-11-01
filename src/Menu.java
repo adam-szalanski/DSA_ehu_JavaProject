@@ -153,6 +153,24 @@ public class Menu {
                                 ppl.printPeopleByHome(select1);
                                 break;
                         }
+                        case 11:{
+                                System.out.println("To show the list of people, write down starting and ending year (separated by ','):");
+                                Scanner input1 = new Scanner(System.in);
+                                String select1 = input1.nextLine();
+                                String[] splited = select1.split(",");
+                                try{
+                                        if(splited[0]==null || splited[1]==null){
+                                                System.out.println("Wrong year range provided");
+                                        }
+                                        int yearMin,yearMax;
+                                        yearMin=Math.min(Integer.parseInt(splited[0]),Integer.parseInt(splited[1]));
+                                        yearMax=Math.max(Integer.parseInt(splited[0]),Integer.parseInt(splited[1]));
+                                        ppl.printPeopleBornBetween(yearMin,yearMax);
+                                }catch(IndexOutOfBoundsException e){
+                                        System.out.println("Wrong year range provided");
+                                }
+                                break;
+                        }
                         case 0: {
                                 return;
                         }
@@ -184,7 +202,8 @@ public class Menu {
                 System.out.println("7 - Delete person and relations related to it");
                 System.out.println("8 - Delete relationship");
                 System.out.println("9 - Show relationships for lastname");
-                System.out.println("10 - Show relationships for lastname");
+                System.out.println("10 - Show people by hometown");
+                System.out.println("11 - Show people born between years");
                System.out.println("0 - Quit");
 
                 selection = input.nextInt();
