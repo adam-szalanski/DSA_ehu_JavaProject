@@ -220,7 +220,6 @@ public class Menu {
 
 /*
 TODO: Milestone 2
-TODO: Get list of people born between Date1 and Date2, sorted by birthplace, surname, name (only consider year in dates)
 
 TODO: Given a set of identifiers in a file (residential.txt) get name, surname, birthPlace, studiedAt; birthplace matches hometown in file (residential.txt).
 TODO: if hometown/birthplace are unknown, don't affect results
