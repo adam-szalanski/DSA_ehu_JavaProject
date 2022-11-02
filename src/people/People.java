@@ -49,6 +49,46 @@ public final class People {
     }
 
     /**
+     * This method prints out the list of all the people loaded to the program.
+     */
+    public void printAllPeople() {
+        String line = String.format("%n%-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-40.40s %-40.40s %-50.50s %-30.30s%n"
+                ,"Id","Name","Lastname","Birthdate","Gender","Birth Place","Home","Studied At","Workplaces","Favourite Films","Group Code");
+        System.out.printf("%s%s",line,dashLineFormatter(line));
+        for(Person p : people){
+            String studied="";
+            for(String str : p.getStudiedAt())
+                studied+=str+", ";
+            studied = studied.substring(0,studied.length()-2);
+
+            String work="";
+            for(String str : p.getWorkplaces())
+                work+=str+", ";
+            work = work.substring(0,work.length()-2);
+
+            String film="";
+            for(String str : p.getFilms())
+                film+=str+", ";
+            film = film.substring(0,film.length()-2);
+
+            String date = String.format("%1$td %1$tB %1$tY",p.getBirthdate());
+
+            System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-40.40s %-40.40s %-50.50s %-30.30s%n",
+                    p.getIdPerson(),
+                    p.getName(),
+                    p.getLastname(),
+                    date,
+                    p.getGender(),
+                    p.getBirthplace(),
+                    p.getHome(),
+                    studied,
+                    work,
+                    film,
+                    p.getGroupCode());
+        }
+    }
+
+    /**
      * This method check if the user ID is already in list of people,
      * if not - add person from string to list of people
      * @param data is string containing data for creating a new object of Person class.
@@ -136,7 +176,7 @@ public final class People {
                 List<Relationship> relations = relationships.findRelationshipsById(p.getIdPerson());
                 System.out.printf("Relationships of %s %s:%n",p.getLastname(),p.getName());
                 String line = String.format("%-30.30s %-30.30s","surname","name");
-                System.out.printf("%s%s%n",line,dashLineFormatter(line));
+                System.out.printf("%s%s",line,dashLineFormatter(line));
                 for(Relationship r : relations){
                     if (r.getFriend1()==p)
                         System.out.printf("%-30.30s %-30.30s%n",r.getFriend2().getName(),r.getFriend2().getLastname());
@@ -171,7 +211,7 @@ public final class People {
         if(!found.isEmpty()) {
             System.out.printf("Found following people from %s:%n",home);
             String line = String.format("%-30.30s %-30.30s%n","id","surname");
-            System.out.printf("%s%s%n",line,dashLineFormatter(line));
+            System.out.printf("%s%s",line,dashLineFormatter(line));
             for (Person p : found) {
                 System.out.printf("%-30.30s %-30.30s%n",p.getIdPerson(),p.getLastname());
             }
@@ -212,7 +252,7 @@ public final class People {
         if(!found.isEmpty()) {
             System.out.printf("Found following people born between years %d and %d:%n%n",yearMin,yearMax);
             String line = String.format("%-30.30s %-30.30s %-30.30s %-30.30s%n","id","surname","name","birthplace");
-            System.out.printf("%s%s%n",line,dashLineFormatter(line));
+            System.out.printf("%s%s",line,dashLineFormatter(line));
             found.sort(Comparator.comparing(Person::getBirthplace)
                     .thenComparing(Person::getLastname)
                     .thenComparing(Person::getName));
@@ -256,8 +296,9 @@ public final class People {
         }
     }
 
-    public String dashLineFormatter(String line){
+    public static String dashLineFormatter(String line){
         return String.format("%"+line.length()+"."+line.length()+"s%n",DASHES);
     }
+
 
 }

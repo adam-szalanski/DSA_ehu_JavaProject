@@ -19,9 +19,6 @@ public class Menu {
 	public static void main(String[] args) {
 
         List<String> strings;
-        List<Person> pplList;
-        List<Relationship> relList;
-
 
         int userChoice;
         String select;
@@ -80,15 +77,11 @@ public class Menu {
                                 break;
                         }
                         case 3: {
-                                pplList = ppl.getPeople();
-                                for(Person person: pplList)
-                                        System.out.println(person.toString());
+                                ppl.printAllPeople();
                                 break;
                         }
                         case 4: {
-                                relList = rels.getRelations();
-                                for(Relationship relationship: relList)
-                                        System.out.println(relationship.toString());
+                                rels.printAllRelationships();
                                 break;
                         }
                         case 5: {
@@ -133,9 +126,9 @@ public class Menu {
                                 Scanner input2 = new Scanner(System.in);
                                 String select2 = input2.nextLine();
 
-                                Relationship relationshipForDelate = rels.findRelationshipsByIDs(select1, select2);
+                                Relationship relationshipToDelete = rels.findRelationshipsByIDs(select1, select2);
 
-                                rels.deleteRelationship(relationshipForDelate);
+                                rels.deleteRelationship(relationshipToDelete);
 
                                 break;
                         }

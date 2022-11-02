@@ -119,4 +119,11 @@ public final class Relationships {
 
     }
 
+    public void printAllRelationships() {
+        String line = String.format("%n%-30.30s %-30.30s%n","Friend 1 ID","Friend 2 ID");
+        System.out.printf("%s%s",line,People.dashLineFormatter(line));
+        for (Relationship r : relations){
+            System.out.printf("%-30.30s %-30.30s%n",r.getFriend1().getIdPerson(),r.getFriend2().getIdPerson());
+        }
+    }
 }
