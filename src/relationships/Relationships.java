@@ -118,7 +118,9 @@ public final class Relationships {
         return found;
 
     }
-
+    /**
+     * This method prints out every relationship stored in the program
+     */
     public void printAllRelationships() {
         String line = String.format("%n%-30.30s %-30.30s%n","Friend 1 ID","Friend 2 ID");
         System.out.printf("%s%s",line,People.dashLineFormatter(line));
