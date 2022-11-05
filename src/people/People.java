@@ -41,6 +41,7 @@ public final class People {
 
     /**
      * Getter for a people field.
+     *
      * @return list of Person type objects.
      */
     public List<Person> getPeople() {
@@ -49,6 +50,7 @@ public final class People {
 
     /**
      * Setter for a people field.
+     *
      * @param people is list of Person type objects.
      */
     public void setPeople(List<Person> people) {
@@ -60,25 +62,25 @@ public final class People {
      */
     public void printAllPeople() {
         String line = String.format("%n%-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-60.60s %-60.60s %-150.150s %-30.30s%n"
-                ,"Id","Name","Lastname","Birthdate","Gender","Birth Place","Home","Studied At","Workplaces","Favourite Films","Group Code");
-        System.out.printf("%s%s",line,dashLineFormatter(line));
-        for(Person p : people){
-            String studied="";
-            for(String str : p.getStudiedAt())
-                studied+=str+", ";
-            studied = studied.substring(0,studied.length()-2);
+                , "Id", "Name", "Lastname", "Birthdate", "Gender", "Birth Place", "Home", "Studied At", "Workplaces", "Favourite Films", "Group Code");
+        System.out.printf("%s%s", line, dashLineFormatter(line));
+        for (Person p : people) {
+            String studied = "";
+            for (String str : p.getStudiedAt())
+                studied += str + ", ";
+            studied = studied.substring(0, studied.length() - 2);
 
-            String work="";
-            for(String str : p.getWorkplaces())
-                work+=str+", ";
-            work = work.substring(0,work.length()-2);
+            String work = "";
+            for (String str : p.getWorkplaces())
+                work += str + ", ";
+            work = work.substring(0, work.length() - 2);
 
-            String film="";
-            for(String str : p.getFilms())
-                film+=str+", ";
-            film = film.substring(0,film.length()-2);
+            String film = "";
+            for (String str : p.getFilms())
+                film += str + ", ";
+            film = film.substring(0, film.length() - 2);
 
-            String date = String.format("%1$td %1$tB %1$tY",p.getBirthdate());
+            String date = String.format("%1$td %1$tB %1$tY", p.getBirthdate());
 
             System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-30.30s %-60.60s %-60.60s %-150.150s %-30.30s%n",
                     p.getIdPerson(),
@@ -98,6 +100,7 @@ public final class People {
     /**
      * This method check if the user ID is already in list of people,
      * if not - add person from string to list of people
+     *
      * @param data is string containing data for creating a new object of Person class.
      * @throws ParseException Signals that an error has been reached unexpectedly while parsing.
      */
@@ -116,13 +119,13 @@ public final class People {
 
         String[] splited = data.split(",");
 
-        if(Objects.equals(splited[0], "\n") || Objects.equals(splited[0], "\r"))
+        if (Objects.equals(splited[0], "\n") || Objects.equals(splited[0], "\r"))
             return;
 
         idPerson = splited[0];
-        if(!this.people.isEmpty())
-            for(Person p : people)
-                if(p.getIdPerson().compareTo(idPerson)==0)
+        if (!this.people.isEmpty())
+            for (Person p : people)
+                if (p.getIdPerson().compareTo(idPerson) == 0)
                     return;
 
         name = splited[1];
@@ -140,100 +143,145 @@ public final class People {
         films = Arrays.stream(splitedFilms).toList();
         groupCode = splited[10];
 
-        Person newPerson = new Person(idPerson,name,lastname,birthdate,gender,birthplace,home, studiedAt,workplaces,films,groupCode);
+        Person newPerson = new Person(idPerson, name, lastname, birthdate, gender, birthplace, home, studiedAt, workplaces, films, groupCode);
         people.add(newPerson);
     }
 
     /**
      * This method finds Person object with corresponding ID in people list.
+     *
      * @param id string
      * @return Person object
      */
-    public Person findPersonById(String id){
-        if(!this.people.isEmpty())
-            for(Person p : people)
-                if(p.getIdPerson().compareTo(id)==0)
+    public Person findPersonById(String id) {
+        if (!this.people.isEmpty())
+            for (Person p : people)
+                if (p.getIdPerson().compareTo(id) == 0)
                     return p;
         return null;
     }
 
     /**
      * This method finds List of Person objects with corresponding surname in people list.
+     *
      * @param surname string
      * @return List<Person> object
      */
-    public List<Person> findPersonBySurname(String surname){
+    public List<Person> findPersonBySurname(String surname) {
         List<Person> found = new ArrayList<>();
-        if(!this.people.isEmpty())
-            for(Person p : people)
-                if(p.getLastname().compareTo(surname)==0)
+        if (!this.people.isEmpty())
+            for (Person p : people)
+                if (p.getLastname().compareTo(surname) == 0)
                     found.add(p);
         return found;
     }
 
     /**
      * This method prints relationships of people with a given lastname
-     * @param lastname String
+     *
+     * @param lastname      String
      * @param relationships Relationships
      */
-    public void printRelationshipsByLastname(String lastname, Relationships relationships){
+    public void printRelationshipsByLastname(String lastname, Relationships relationships) {
         List<Person> persons = findPersonBySurname(lastname);
-        if(!persons.isEmpty()){
-            for(Person p : persons){
+        if (!persons.isEmpty()) {
+            for (Person p : persons) {
                 List<Relationship> relations = relationships.findRelationshipsById(p.getIdPerson());
-                System.out.printf("Relationships of %s %s:%n",p.getLastname(),p.getName());
-                String line = String.format("%-30.30s %-30.30s","surname","name");
-                System.out.printf("%s%s",line,dashLineFormatter(line));
-                for(Relationship r : relations){
-                    if (r.getFriend1()==p)
-                        System.out.printf("%-30.30s %-30.30s%n",r.getFriend2().getName(),r.getFriend2().getLastname());
+                System.out.printf("Relationships of %s %s:%n", p.getLastname(), p.getName());
+                String line = String.format("%-30.30s %-30.30s", "surname", "name");
+                System.out.printf("%s%s", line, dashLineFormatter(line));
+                for (Relationship r : relations) {
+                    if (r.getFriend1() == p)
+                        System.out.printf("%-30.30s %-30.30s%n", r.getFriend2().getName(), r.getFriend2().getLastname());
                     else
-                        System.out.printf("%-30.30s %-30.30s%n",r.getFriend1().getName(),r.getFriend1().getLastname());
+                        System.out.printf("%-30.30s %-30.30s%n", r.getFriend1().getName(), r.getFriend1().getLastname());
                 }
             }
-        }else{
+        } else {
             System.out.println("Person of that lastname wasn't found");
         }
     }
 
     /**
      * This method finds a list of people with the passed hometown
+     *
      * @param home String
      * @return List<Person> list of found people
      */
-    public List<Person> findPeopleByHome(String home){
+    public List<Person> findPeopleByHome(String home) {
         List<Person> found = new ArrayList<>();
-        for (Person p : this.people){
-            if(p.getHome().equals(home))
+        for (Person p : this.people) {
+            if (p.getHome().equals(home))
                 found.add(p);
         }
         return found;
     }
+
     /**
      * This method prints people with a given hometown
+     *
      * @param home String
      */
-    public void printPeopleByHome(String home){
+    public void printPeopleByHome(String home) {
         List<Person> found = findPeopleByHome(home);
-        if(!found.isEmpty()) {
-            System.out.printf("Found following people from %s:%n",home);
-            String line = String.format("%-30.30s %-30.30s%n","id","surname");
-            System.out.printf("%s%s",line,dashLineFormatter(line));
+        if (!found.isEmpty()) {
+            System.out.printf("Found following people from %s:%n", home);
+            String line = String.format("%-30.30s %-30.30s %-30.30s %-30.30s%n", "name", "surname", "birthplace", "studied at");
+            System.out.printf("%s%s", line, dashLineFormatter(line));
             for (Person p : found) {
-                System.out.printf("%-30.30s %-30.30s%n",p.getIdPerson(),p.getLastname());
+                String studied = "";
+                for (String str : p.getStudiedAt())
+                    studied += str + ", ";
+                studied = studied.substring(0, studied.length() - 2);
+                System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s%n", p.getName(), p.getLastname(), p.getBirthplace(), studied);
             }
-        }
-        else{
-            System.out.printf("Found no person from %s%n",home);
+        } else {
+            System.out.printf("Found no person from %s%n", home);
         }
     }
+
+    /**
+     * This method finds a list of people with the passed birthplace
+     *
+     * @param birthplace String
+     * @return List<Person> list of found people
+     */
+    public List<Person> findPeopleByBirthplace(String birthplace) {
+        List<Person> found = new ArrayList<>();
+        for (Person p : this.people) {
+            if (p.getBirthplace().equals(birthplace))
+                found.add(p);
+        }
+        return found;
+    }
+
+    /**
+     * This method prints people with a given birthplace
+     *
+     * @param birthplace String
+     */
+    public void printPeopleByBirthplace(String birthplace) {
+        List<Person> found = findPeopleByBirthplace(birthplace);
+        if (!found.isEmpty()) {
+            System.out.printf("Found following people born in %s:%n", birthplace);
+            String line = String.format("%-30.30s %-30.30s%n", "ID", "surname");
+            System.out.printf("%s%s", line, dashLineFormatter(line));
+            for (Person p : found) {
+                System.out.printf("%-30.30s %-30.30s%n", p.getIdPerson(), p.getLastname());
+            }
+        } else {
+            System.out.printf("Found no person born in %s%n", birthplace);
+        }
+    }
+
     /**
      * This method finds a list of people born between passed years
+     *
      * @param yearMin int
      * @param yearMax int
      * @return List<Person> list of found people
      */
-    public List<Person> findPeopleBornBetween(int yearMin, int yearMax){
+    public List<Person> findPeopleBornBetween(int yearMin, int yearMax) {
         List<Person> found = new ArrayList<>();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
         try {
@@ -243,7 +291,7 @@ public final class People {
                 if (!(p.getBirthdate().before(startRange) || p.getBirthdate().after(endRange)))
                     found.add(p);
             }
-        }catch (ParseException e){
+        } catch (ParseException e) {
             e.printStackTrace();
         }
         return found;
@@ -251,51 +299,53 @@ public final class People {
 
     /**
      * This method prints people born between passed years
+     *
      * @param yearMin int
      * @param yearMax int
      */
     public void printPeopleBornBetween(int yearMin, int yearMax) {
-        List<Person> found = findPeopleBornBetween(yearMin,yearMax);
-        if(!found.isEmpty()) {
-            System.out.printf("Found following people born between years %d and %d:%n%n",yearMin,yearMax);
-            String line = String.format("%-30.30s %-30.30s %-30.30s %-30.30s%n","id","surname","name","birthplace");
-            System.out.printf("%s%s",line,dashLineFormatter(line));
+        List<Person> found = findPeopleBornBetween(yearMin, yearMax);
+        if (!found.isEmpty()) {
+            System.out.printf("Found following people born between years %d and %d:%n%n", yearMin, yearMax);
+            String line = String.format("%-30.30s %-30.30s %-30.30s %-30.30s%n", "id", "surname", "name", "birthplace");
+            System.out.printf("%s%s", line, dashLineFormatter(line));
             found.sort(Comparator.comparing(Person::getBirthplace)
                     .thenComparing(Person::getLastname)
                     .thenComparing(Person::getName));
             for (Person p : found) {
-                System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s%n",p.getIdPerson(),p.getLastname(),p.getName(),p.getBirthplace());
+                System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s%n", p.getIdPerson(), p.getLastname(), p.getName(), p.getBirthplace());
             }
-        }
-        else{
-            System.out.printf("Found no person born between years %d and %d:%n",yearMin,yearMax);
+        } else {
+            System.out.printf("Found no person born between years %d and %d:%n", yearMin, yearMax);
         }
     }
 
     /**
      * This method writes string to given file name.
+     *
      * @param filename string
      * @throws IOException This throws could occur when writing to a file
      */
     public void writeToFile(String filename) throws IOException {
-        String output = FIRST_LINE_PEOPLE +"\n";
-        for(Person p : people)
-            output+=p.toString()+"\n";
-        output.substring(0,output.length()-1);
-        if(filename!=null)
-            FileHandling.writeToFile(output,filename);
+        String output = FIRST_LINE_PEOPLE + "\n";
+        for (Person p : people)
+            output += p.toString() + "\n";
+        output.substring(0, output.length() - 1);
+        if (filename != null)
+            FileHandling.writeToFile(output, filename);
         else
-            FileHandling.writeToFile(output,FILENAME);
+            FileHandling.writeToFile(output, FILENAME);
     }
 
     /**
      * This method removes person with a certain id from the list of people
      * If person with that id does not exist, prints out a message
+     *
      * @param id String
      */
-    public void removePersonById(String id){
+    public void removePersonById(String id) {
         Person removedPerson = findPersonById(id);
-        if(removedPerson==null)
+        if (removedPerson == null)
             System.out.println("Person with that id does not exist");
         else {
             people.remove(removedPerson);
@@ -303,8 +353,39 @@ public final class People {
         }
     }
 
-    public static String dashLineFormatter(String line){
-        return String.format("%"+line.length()+"."+line.length()+"s%n",DASHES);
+    public static String dashLineFormatter(String line) {
+        return String.format("%" + line.length() + "." + line.length() + "s%n", DASHES);
+    }
+
+    public void findMatchesByFile(String filename) throws IOException {
+        List<Person> listOfPeopleFromFile = new ArrayList<>();
+        List<Person> listOfFoundedPeopleFromFile;
+
+        List<String> ids = FileHandling.readFile(filename);
+        for (String id : ids) {
+            listOfPeopleFromFile.add(findPersonById(id));
+        }
+        for (Person one : listOfPeopleFromFile) {
+            listOfFoundedPeopleFromFile = findPeopleByBirthplace(one.getHome());
+            printMatchesByFile(listOfFoundedPeopleFromFile, one.getIdPerson());
+        }
+    }
+
+    private void printMatchesByFile(List<Person> personList, String id) {
+        if (!personList.isEmpty()) {
+            System.out.printf("Found following people for person whose id is %s:%n", id);
+            String line = String.format("%-30.30s %-30.30s %-30.30s %-30.30s%n", "name", "surname", "home town", "studied at");
+            System.out.printf("%s%s", line, dashLineFormatter(line));
+            for (Person p : personList) {
+                String studied = "";
+                for (String str : p.getStudiedAt())
+                    studied += str + ", ";
+                studied = studied.substring(0, studied.length() - 2);
+                System.out.printf("%-30.30s %-30.30s %-30.30s %-30.30s%n", p.getName(), p.getLastname(), p.getHome(), studied);
+            }
+        } else {
+            System.out.printf("Found no people for person whose id is %s%n", id);
+        }
     }
 
 
