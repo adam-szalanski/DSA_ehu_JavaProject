@@ -14,21 +14,6 @@ import java.util.*;
 public final class People {
     public final static String FIRST_LINE_PEOPLE = "idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode";
     private final static String FILENAME = "people";
-    private final static String DASHES = "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------" +
-            "-------------------------------------------------------------";
 
     /**
      * Constructor for a People class.
@@ -360,7 +345,18 @@ public final class People {
      * @return String of dashes
      */
     public static String dashLineFormatter(String line) {
-        return String.format("%" + line.length() + "." + line.length() + "s%n", DASHES);
+        return "-".repeat(line.length())+"\n";
+    }
+
+    /**
+     * A little function that takes a line containing column names and returns
+     * a line of dashes adjusted to the length of passed line
+     * @param line String with column names
+     * @param symbol String to be used as a delimiter line
+     * @return String of passed symbol
+     */
+    public static String anySymbolLineFormatter(String line, String symbol){
+        return symbol.trim().repeat(line.length())+"\n";
     }
 
     /**

@@ -3,9 +3,7 @@ import fileHandling.FileHandling;
 import relationships.Relationship;
 import relationships.Relationships;
 
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * This class is currently the main class of the projects.
@@ -187,7 +185,6 @@ public class Menu {
      * @return integer
      */
     public static int menu() {
-
         int selection;
         try {
             Scanner input = new Scanner(System.in);
