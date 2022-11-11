@@ -353,24 +353,42 @@ public final class People {
         }
     }
 
+    /**
+     * A little function that takes a line containing column names and returns
+     * a line of dashes adjusted to the length of passed line
+     * @param line String with column names
+     * @return String of dashes
+     */
     public static String dashLineFormatter(String line) {
         return String.format("%" + line.length() + "." + line.length() + "s%n", DASHES);
     }
 
+    /**
+     * The function takes the name of the .txt file, reads the contents
+     * of the file being the ID's of people and prints the lists of
+     * people whose birthplace is equal to hometown of people from file
+     * @param filename String - name of the file without extension
+     * @throws IOException in case the file causes issues
+     */
     public void findMatchesByFile(String filename) throws IOException {
         List<Person> listOfPeopleFromFile = new ArrayList<>();
-        List<Person> listOfFoundedPeopleFromFile;
+        List<Person> listOfFoundPeopleFromFile;
 
         List<String> ids = FileHandling.readFile(filename);
         for (String id : ids) {
             listOfPeopleFromFile.add(findPersonById(id));
         }
         for (Person one : listOfPeopleFromFile) {
-            listOfFoundedPeopleFromFile = findPeopleByBirthplace(one.getHome());
-            printMatchesByFile(listOfFoundedPeopleFromFile, one.getIdPerson());
+            listOfFoundPeopleFromFile = findPeopleByBirthplace(one.getHome());
+            printMatchesByFile(listOfFoundPeopleFromFile, one.getIdPerson());
         }
     }
 
+    /**
+     * This function takes a list of people and id of a person and prints the formatted output
+     * @param personList List<Person> list containing people whose data should be printed
+     * @param id String ID of the person for whom the list was created
+     */
     private void printMatchesByFile(List<Person> personList, String id) {
         if (!personList.isEmpty()) {
             System.out.printf("Found following people for person whose id is %s:%n", id);
