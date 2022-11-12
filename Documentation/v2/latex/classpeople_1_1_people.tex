@@ -1,0 +1,663 @@
+\hypertarget{classpeople_1_1_people}{}\doxysection{people.\+People Class Reference}
+\label{classpeople_1_1_people}\index{people.People@{people.People}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpeople_1_1_people_a18fb1b75922291a01a64bcd3dc18a765}{People}} ()
+\item 
+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ \mbox{\hyperlink{classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c}{get\+People}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ab9866f4d6cebcc5a5a9453188e9227bb}{set\+People}} (List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ac37cdf0e6662bf4fe689f627885cd957}{print\+All\+People}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a0821174417701bc4962478ace48601a7}{add\+Person\+From\+String}} (String data)  throws Parse\+Exception 
+\item 
+\mbox{\hyperlink{classpeople_1_1_person}{Person}} \mbox{\hyperlink{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5}{find\+Person\+By\+Id}} (String id)
+\item 
+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ \mbox{\hyperlink{classpeople_1_1_people_a12b2d54a06b6cb784079f764c52cf2e9}{find\+Person\+By\+Surname}} (String surname)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_acd7b7030282c9b8eb769f2d5ca32c426}{print\+Relationships\+By\+Lastname}} (String lastname, \mbox{\hyperlink{classrelationships_1_1_relationships}{Relationships}} relationships)
+\item 
+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ \mbox{\hyperlink{classpeople_1_1_people_a1951a78646f76262bafc722e48d71305}{find\+People\+By\+Home}} (String home)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ae17c426d1e237b1fd18d4b27b30ef100}{print\+People\+By\+Home}} (String home)
+\item 
+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ \mbox{\hyperlink{classpeople_1_1_people_ab19cecd4b39a486ffc8a89fceb706f66}{find\+People\+By\+Birthplace}} (String birthplace)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a3df374313cf2f22a4d7c666398451c39}{print\+People\+By\+Birthplace}} (String birthplace)
+\item 
+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ \mbox{\hyperlink{classpeople_1_1_people_aaf189e62b4fc20ef59e7cabfa618885a}{find\+People\+Born\+Between}} (int year\+Min, int year\+Max)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a3e64d62b872fb2f02875fcaa3018f1ad}{print\+People\+Born\+Between}} (int year\+Min, int year\+Max)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c}{write\+To\+File}} (String filename)  throws IOException 
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ababdf3a2ed100e4864e9b2c36a5cc145}{remove\+Person\+By\+Id}} (String id)
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_af1c91804f6d754ac6b3eef589a33e3f3}{find\+Matches\+By\+File}} (String filename)  throws IOException 
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ac2efc7909cf547b75ec1ad41950a2cf9}{sort\+By\+Surname\+And\+Name}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a20efb91d179c2b47c79932cdc8be919d}{sort\+By\+Birthplace\+Surname\+And\+Name}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ab99d8f66c36ecac06159e2ef716ee61f}{quicksort\+By\+Birthplace\+Surname\+And\+Name}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a790eaba85a104f1d449770ce89d9f942}{fill\+The\+Classes}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_ad4895df19ce43136d2623d04e632ea50}{print\+All\+Classes}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a4858cd60eeb58a3dbd52757ce70d9314}{sort\+Classes}} ()
+\item 
+void \mbox{\hyperlink{classpeople_1_1_people_a79cb98a2345554ff61085b0f3f6d333b}{sort\+People\+By\+Movies}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \mbox{\hyperlink{classpeople_1_1_people_a9e15c7945b0f3f3d0a8019a3e56f67fd}{dash\+Line\+Formatter}} (String line)
+\item 
+static String \mbox{\hyperlink{classpeople_1_1_people_a16326502f45fe0a84919ca8baf36f617}{any\+Symbol\+Line\+Formatter}} (String line, String symbol)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Hash\+Map$<$ List$<$ String $>$, List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ $>$ \mbox{\hyperlink{classpeople_1_1_people_a22af2f49227e342112c05a329f39ac74}{profiles}} = new Hash\+Map$<$$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \mbox{\hyperlink{classpeople_1_1_people_a9d6a96f4e4093e899d7cc694a0908210}{FIRST\+\_\+\+LINE\+\_\+\+PEOPLE}} = \char`\"{}idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpeople_1_1_people_a18fb1b75922291a01a64bcd3dc18a765}\label{classpeople_1_1_people_a18fb1b75922291a01a64bcd3dc18a765}} 
+\index{people.People@{people.People}!People@{People}}
+\index{People@{People}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{People()}{People()}}
+{\footnotesize\ttfamily people.\+People.\+People (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for a \mbox{\hyperlink{classpeople_1_1_people}{People}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpeople_1_1_people_a0821174417701bc4962478ace48601a7}\label{classpeople_1_1_people_a0821174417701bc4962478ace48601a7}} 
+\index{people.People@{people.People}!addPersonFromString@{addPersonFromString}}
+\index{addPersonFromString@{addPersonFromString}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{addPersonFromString()}{addPersonFromString()}}
+{\footnotesize\ttfamily void people.\+People.\+add\+Person\+From\+String (\begin{DoxyParamCaption}\item[{String}]{data }\end{DoxyParamCaption}) throws Parse\+Exception}
+
+This method check if the user ID is already in list of people, if not -\/ add person from string to list of people
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is string containing data for creating a new object of \mbox{\hyperlink{classpeople_1_1_person}{Person}} class. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Parse\+Exception} & Signals that an error has been reached unexpectedly while parsing. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classpeople_1_1_people_a0821174417701bc4962478ace48601a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a16326502f45fe0a84919ca8baf36f617}\label{classpeople_1_1_people_a16326502f45fe0a84919ca8baf36f617}} 
+\index{people.People@{people.People}!anySymbolLineFormatter@{anySymbolLineFormatter}}
+\index{anySymbolLineFormatter@{anySymbolLineFormatter}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{anySymbolLineFormatter()}{anySymbolLineFormatter()}}
+{\footnotesize\ttfamily static String people.\+People.\+any\+Symbol\+Line\+Formatter (\begin{DoxyParamCaption}\item[{String}]{line,  }\item[{String}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A little function that takes a line containing column names and returns a line of dashes adjusted to the length of passed line 
+\begin{DoxyParams}{Parameters}
+{\em line} & String with column names \\
+\hline
+{\em symbol} & String to be used as a delimiter line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of passed symbol 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpeople_1_1_people_a9e15c7945b0f3f3d0a8019a3e56f67fd}\label{classpeople_1_1_people_a9e15c7945b0f3f3d0a8019a3e56f67fd}} 
+\index{people.People@{people.People}!dashLineFormatter@{dashLineFormatter}}
+\index{dashLineFormatter@{dashLineFormatter}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{dashLineFormatter()}{dashLineFormatter()}}
+{\footnotesize\ttfamily static String people.\+People.\+dash\+Line\+Formatter (\begin{DoxyParamCaption}\item[{String}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A little function that takes a line containing column names and returns a line of dashes adjusted to the length of passed line 
+\begin{DoxyParams}{Parameters}
+{\em line} & String with column names \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String of dashes 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a9e15c7945b0f3f3d0a8019a3e56f67fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a790eaba85a104f1d449770ce89d9f942}\label{classpeople_1_1_people_a790eaba85a104f1d449770ce89d9f942}} 
+\index{people.People@{people.People}!fillTheClasses@{fillTheClasses}}
+\index{fillTheClasses@{fillTheClasses}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{fillTheClasses()}{fillTheClasses()}}
+{\footnotesize\ttfamily void people.\+People.\+fill\+The\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function builds a classes of movies containing peoples who likes the same sets of movies Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a790eaba85a104f1d449770ce89d9f942_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_af1c91804f6d754ac6b3eef589a33e3f3}\label{classpeople_1_1_people_af1c91804f6d754ac6b3eef589a33e3f3}} 
+\index{people.People@{people.People}!findMatchesByFile@{findMatchesByFile}}
+\index{findMatchesByFile@{findMatchesByFile}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findMatchesByFile()}{findMatchesByFile()}}
+{\footnotesize\ttfamily void people.\+People.\+find\+Matches\+By\+File (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption}) throws IOException}
+
+The function takes the name of the .txt file, reads the contents of the file being the ID\textquotesingle{}s of people and prints the lists of people whose birthplace is equal to hometown of people from file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & String -\/ name of the file without extension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & in case the file causes issues \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_af1c91804f6d754ac6b3eef589a33e3f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{classpeople_1_1_people_af1c91804f6d754ac6b3eef589a33e3f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_aaf189e62b4fc20ef59e7cabfa618885a}\label{classpeople_1_1_people_aaf189e62b4fc20ef59e7cabfa618885a}} 
+\index{people.People@{people.People}!findPeopleBornBetween@{findPeopleBornBetween}}
+\index{findPeopleBornBetween@{findPeopleBornBetween}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findPeopleBornBetween()}{findPeopleBornBetween()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people.\+People.\+find\+People\+Born\+Between (\begin{DoxyParamCaption}\item[{int}]{year\+Min,  }\item[{int}]{year\+Max }\end{DoxyParamCaption})}
+
+This method finds a list of people born between passed years
+
+
+\begin{DoxyParams}{Parameters}
+{\em year\+Min} & int \\
+\hline
+{\em year\+Max} & int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\+Person$>$ list of found people 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_aaf189e62b4fc20ef59e7cabfa618885a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ab19cecd4b39a486ffc8a89fceb706f66}\label{classpeople_1_1_people_ab19cecd4b39a486ffc8a89fceb706f66}} 
+\index{people.People@{people.People}!findPeopleByBirthplace@{findPeopleByBirthplace}}
+\index{findPeopleByBirthplace@{findPeopleByBirthplace}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findPeopleByBirthplace()}{findPeopleByBirthplace()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people.\+People.\+find\+People\+By\+Birthplace (\begin{DoxyParamCaption}\item[{String}]{birthplace }\end{DoxyParamCaption})}
+
+This method finds a list of people with the passed birthplace
+
+
+\begin{DoxyParams}{Parameters}
+{\em birthplace} & String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\+Person$>$ list of found people 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_ab19cecd4b39a486ffc8a89fceb706f66_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a1951a78646f76262bafc722e48d71305}\label{classpeople_1_1_people_a1951a78646f76262bafc722e48d71305}} 
+\index{people.People@{people.People}!findPeopleByHome@{findPeopleByHome}}
+\index{findPeopleByHome@{findPeopleByHome}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findPeopleByHome()}{findPeopleByHome()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people.\+People.\+find\+People\+By\+Home (\begin{DoxyParamCaption}\item[{String}]{home }\end{DoxyParamCaption})}
+
+This method finds a list of people with the passed hometown
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\+Person$>$ list of found people 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a1951a78646f76262bafc722e48d71305_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5}\label{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5}} 
+\index{people.People@{people.People}!findPersonById@{findPersonById}}
+\index{findPersonById@{findPersonById}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findPersonById()}{findPersonById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classpeople_1_1_person}{Person}} people.\+People.\+find\+Person\+By\+Id (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method finds \mbox{\hyperlink{classpeople_1_1_person}{Person}} object with corresponding ID in people list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classpeople_1_1_person}{Person}} object 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a98370d0edbf457a657735195d163ace5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a12b2d54a06b6cb784079f764c52cf2e9}\label{classpeople_1_1_people_a12b2d54a06b6cb784079f764c52cf2e9}} 
+\index{people.People@{people.People}!findPersonBySurname@{findPersonBySurname}}
+\index{findPersonBySurname@{findPersonBySurname}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{findPersonBySurname()}{findPersonBySurname()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people.\+People.\+find\+Person\+By\+Surname (\begin{DoxyParamCaption}\item[{String}]{surname }\end{DoxyParamCaption})}
+
+This method finds List of \mbox{\hyperlink{classpeople_1_1_person}{Person}} objects with corresponding surname in people list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em surname} & string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\+Person$>$ object 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a12b2d54a06b6cb784079f764c52cf2e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c}\label{classpeople_1_1_people_ad6864d74dfffe180d0bc7f9f4d68f14c}} 
+\index{people.People@{people.People}!getPeople@{getPeople}}
+\index{getPeople@{getPeople}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{getPeople()}{getPeople()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ people.\+People.\+get\+People (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for a people field.
+
+\begin{DoxyReturn}{Returns}
+list of \mbox{\hyperlink{classpeople_1_1_person}{Person}} type objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpeople_1_1_people_ad4895df19ce43136d2623d04e632ea50}\label{classpeople_1_1_people_ad4895df19ce43136d2623d04e632ea50}} 
+\index{people.People@{people.People}!printAllClasses@{printAllClasses}}
+\index{printAllClasses@{printAllClasses}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{printAllClasses()}{printAllClasses()}}
+{\footnotesize\ttfamily void people.\+People.\+print\+All\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function prints all movies classes and all the people who like them Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classpeople_1_1_people_ad4895df19ce43136d2623d04e632ea50_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ac37cdf0e6662bf4fe689f627885cd957}\label{classpeople_1_1_people_ac37cdf0e6662bf4fe689f627885cd957}} 
+\index{people.People@{people.People}!printAllPeople@{printAllPeople}}
+\index{printAllPeople@{printAllPeople}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{printAllPeople()}{printAllPeople()}}
+{\footnotesize\ttfamily void people.\+People.\+print\+All\+People (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method prints out the list of all the people loaded to the program. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_ac37cdf0e6662bf4fe689f627885cd957_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classpeople_1_1_people_ac37cdf0e6662bf4fe689f627885cd957_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a3e64d62b872fb2f02875fcaa3018f1ad}\label{classpeople_1_1_people_a3e64d62b872fb2f02875fcaa3018f1ad}} 
+\index{people.People@{people.People}!printPeopleBornBetween@{printPeopleBornBetween}}
+\index{printPeopleBornBetween@{printPeopleBornBetween}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{printPeopleBornBetween()}{printPeopleBornBetween()}}
+{\footnotesize\ttfamily void people.\+People.\+print\+People\+Born\+Between (\begin{DoxyParamCaption}\item[{int}]{year\+Min,  }\item[{int}]{year\+Max }\end{DoxyParamCaption})}
+
+This method prints people born between passed years
+
+
+\begin{DoxyParams}{Parameters}
+{\em year\+Min} & int \\
+\hline
+{\em year\+Max} & int \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a3e64d62b872fb2f02875fcaa3018f1ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classpeople_1_1_people_a3e64d62b872fb2f02875fcaa3018f1ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a3df374313cf2f22a4d7c666398451c39}\label{classpeople_1_1_people_a3df374313cf2f22a4d7c666398451c39}} 
+\index{people.People@{people.People}!printPeopleByBirthplace@{printPeopleByBirthplace}}
+\index{printPeopleByBirthplace@{printPeopleByBirthplace}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{printPeopleByBirthplace()}{printPeopleByBirthplace()}}
+{\footnotesize\ttfamily void people.\+People.\+print\+People\+By\+Birthplace (\begin{DoxyParamCaption}\item[{String}]{birthplace }\end{DoxyParamCaption})}
+
+This method prints people with a given birthplace
+
+
+\begin{DoxyParams}{Parameters}
+{\em birthplace} & String \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a3df374313cf2f22a4d7c666398451c39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classpeople_1_1_people_a3df374313cf2f22a4d7c666398451c39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ae17c426d1e237b1fd18d4b27b30ef100}\label{classpeople_1_1_people_ae17c426d1e237b1fd18d4b27b30ef100}} 
+\index{people.People@{people.People}!printPeopleByHome@{printPeopleByHome}}
+\index{printPeopleByHome@{printPeopleByHome}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{printPeopleByHome()}{printPeopleByHome()}}
+{\footnotesize\ttfamily void people.\+People.\+print\+People\+By\+Home (\begin{DoxyParamCaption}\item[{String}]{home }\end{DoxyParamCaption})}
+
+This method prints people with a given hometown
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & String \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_ae17c426d1e237b1fd18d4b27b30ef100_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_acd7b7030282c9b8eb769f2d5ca32c426}\label{classpeople_1_1_people_acd7b7030282c9b8eb769f2d5ca32c426}} 
+\index{people.People@{people.People}!printRelationshipsByLastname@{printRelationshipsByLastname}}
+\index{printRelationshipsByLastname@{printRelationshipsByLastname}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{printRelationshipsByLastname()}{printRelationshipsByLastname()}}
+{\footnotesize\ttfamily void people.\+People.\+print\+Relationships\+By\+Lastname (\begin{DoxyParamCaption}\item[{String}]{lastname,  }\item[{\mbox{\hyperlink{classrelationships_1_1_relationships}{Relationships}}}]{relationships }\end{DoxyParamCaption})}
+
+This method prints relationships of people with a given lastname
+
+
+\begin{DoxyParams}{Parameters}
+{\em lastname} & String \\
+\hline
+{\em relationships} & Relationships \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_acd7b7030282c9b8eb769f2d5ca32c426_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classpeople_1_1_people_acd7b7030282c9b8eb769f2d5ca32c426_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ab99d8f66c36ecac06159e2ef716ee61f}\label{classpeople_1_1_people_ab99d8f66c36ecac06159e2ef716ee61f}} 
+\index{people.People@{people.People}!quicksortByBirthplaceSurnameAndName@{quicksortByBirthplaceSurnameAndName}}
+\index{quicksortByBirthplaceSurnameAndName@{quicksortByBirthplaceSurnameAndName}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{quicksortByBirthplaceSurnameAndName()}{quicksortByBirthplaceSurnameAndName()}}
+{\footnotesize\ttfamily void people.\+People.\+quicksort\+By\+Birthplace\+Surname\+And\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sorts people by birthplace surname and name with Quick\+Sort Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{classpeople_1_1_people_ab99d8f66c36ecac06159e2ef716ee61f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ababdf3a2ed100e4864e9b2c36a5cc145}\label{classpeople_1_1_people_ababdf3a2ed100e4864e9b2c36a5cc145}} 
+\index{people.People@{people.People}!removePersonById@{removePersonById}}
+\index{removePersonById@{removePersonById}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{removePersonById()}{removePersonById()}}
+{\footnotesize\ttfamily void people.\+People.\+remove\+Person\+By\+Id (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method removes person with a certain id from the list of people If person with that id does not exist, prints out a message
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & String \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_ababdf3a2ed100e4864e9b2c36a5cc145_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classpeople_1_1_people_ababdf3a2ed100e4864e9b2c36a5cc145_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ab9866f4d6cebcc5a5a9453188e9227bb}\label{classpeople_1_1_people_ab9866f4d6cebcc5a5a9453188e9227bb}} 
+\index{people.People@{people.People}!setPeople@{setPeople}}
+\index{setPeople@{setPeople}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{setPeople()}{setPeople()}}
+{\footnotesize\ttfamily void people.\+People.\+set\+People (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$}]{people }\end{DoxyParamCaption})}
+
+Setter for a people field.
+
+
+\begin{DoxyParams}{Parameters}
+{\em people} & is list of \mbox{\hyperlink{classpeople_1_1_person}{Person}} type objects. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpeople_1_1_people_a20efb91d179c2b47c79932cdc8be919d}\label{classpeople_1_1_people_a20efb91d179c2b47c79932cdc8be919d}} 
+\index{people.People@{people.People}!sortByBirthplaceSurnameAndName@{sortByBirthplaceSurnameAndName}}
+\index{sortByBirthplaceSurnameAndName@{sortByBirthplaceSurnameAndName}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{sortByBirthplaceSurnameAndName()}{sortByBirthplaceSurnameAndName()}}
+{\footnotesize\ttfamily void people.\+People.\+sort\+By\+Birthplace\+Surname\+And\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sorts people by birthplace surname and name with build-\/in sort Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a20efb91d179c2b47c79932cdc8be919d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classpeople_1_1_people_a20efb91d179c2b47c79932cdc8be919d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_ac2efc7909cf547b75ec1ad41950a2cf9}\label{classpeople_1_1_people_ac2efc7909cf547b75ec1ad41950a2cf9}} 
+\index{people.People@{people.People}!sortBySurnameAndName@{sortBySurnameAndName}}
+\index{sortBySurnameAndName@{sortBySurnameAndName}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{sortBySurnameAndName()}{sortBySurnameAndName()}}
+{\footnotesize\ttfamily void people.\+People.\+sort\+By\+Surname\+And\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sorts people by surname and name with build-\/in sort Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_ac2efc7909cf547b75ec1ad41950a2cf9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classpeople_1_1_people_ac2efc7909cf547b75ec1ad41950a2cf9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a4858cd60eeb58a3dbd52757ce70d9314}\label{classpeople_1_1_people_a4858cd60eeb58a3dbd52757ce70d9314}} 
+\index{people.People@{people.People}!sortClasses@{sortClasses}}
+\index{sortClasses@{sortClasses}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{sortClasses()}{sortClasses()}}
+{\footnotesize\ttfamily void people.\+People.\+sort\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sorts the classes of movies by number of people who likes them Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a4858cd60eeb58a3dbd52757ce70d9314_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a79cb98a2345554ff61085b0f3f6d333b}\label{classpeople_1_1_people_a79cb98a2345554ff61085b0f3f6d333b}} 
+\index{people.People@{people.People}!sortPeopleByMovies@{sortPeopleByMovies}}
+\index{sortPeopleByMovies@{sortPeopleByMovies}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{sortPeopleByMovies()}{sortPeopleByMovies()}}
+{\footnotesize\ttfamily void people.\+People.\+sort\+People\+By\+Movies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sorts people by most common movies sets it creates the classes, sort them and then get sorted people from hashmap Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a79cb98a2345554ff61085b0f3f6d333b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classpeople_1_1_people_a79cb98a2345554ff61085b0f3f6d333b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c}\label{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c}} 
+\index{people.People@{people.People}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void people.\+People.\+write\+To\+File (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption}) throws IOException}
+
+This method writes string to given file name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & This throws could occur when writing to a file \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classpeople_1_1_people_a0a75aeec69a3f233a4d56833b43e001c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classpeople_1_1_people_a9d6a96f4e4093e899d7cc694a0908210}\label{classpeople_1_1_people_a9d6a96f4e4093e899d7cc694a0908210}} 
+\index{people.People@{people.People}!FIRST\_LINE\_PEOPLE@{FIRST\_LINE\_PEOPLE}}
+\index{FIRST\_LINE\_PEOPLE@{FIRST\_LINE\_PEOPLE}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{FIRST\_LINE\_PEOPLE}{FIRST\_LINE\_PEOPLE}}
+{\footnotesize\ttfamily final String people.\+People.\+FIRST\+\_\+\+LINE\+\_\+\+PEOPLE = \char`\"{}idperson,name,lastname,birthdate,gender,birthplace,home,studiedat,workplaces,films,groupcode\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpeople_1_1_people_a22af2f49227e342112c05a329f39ac74}\label{classpeople_1_1_people_a22af2f49227e342112c05a329f39ac74}} 
+\index{people.People@{people.People}!profiles@{profiles}}
+\index{profiles@{profiles}!people.People@{people.People}}
+\doxysubsubsection{\texorpdfstring{profiles}{profiles}}
+{\footnotesize\ttfamily Hash\+Map$<$List$<$String$>$, List$<$\mbox{\hyperlink{classpeople_1_1_person}{Person}}$>$ $>$ people.\+People.\+profiles = new Hash\+Map$<$$>$()}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projekty/\+DSA\+\_\+ehu\+\_\+\+Java\+Project/src/people/\mbox{\hyperlink{_people_8java}{People.\+java}}\end{DoxyCompactItemize}

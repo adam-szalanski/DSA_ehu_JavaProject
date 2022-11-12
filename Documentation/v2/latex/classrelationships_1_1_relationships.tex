@@ -1,0 +1,228 @@
+\hypertarget{classrelationships_1_1_relationships}{}\doxysection{relationships.\+Relationships Class Reference}
+\label{classrelationships_1_1_relationships}\index{relationships.Relationships@{relationships.Relationships}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrelationships_1_1_relationships_abd9a981f197d41b3354c6637be315786}{Relationships}} ()
+\item 
+List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ \mbox{\hyperlink{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}{get\+Relations}} ()
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74}{add\+Relationship}} (String list, \mbox{\hyperlink{classpeople_1_1_people}{People}} ppl)
+\item 
+String \mbox{\hyperlink{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}{to\+String}} ()
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}{write\+To\+File}} (String filename)  throws IOException 
+\item 
+List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ \mbox{\hyperlink{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf}{find\+Relationships\+By\+Id}} (String id)
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9}{delete\+Relationship}} (\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} r)
+\item 
+\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} \mbox{\hyperlink{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8}{find\+Relationships\+By\+IDs}} (String id1, String id2)
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_relationships_a8b96b338629ab1e1a36edadfe4ce85b6}{print\+All\+Relationships}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \mbox{\hyperlink{classrelationships_1_1_relationships_a6ba905bc63f76addd1fdfd35b4746ada}{FIRST\+\_\+\+LINE\+\_\+\+RELATIONSHIPS}} = \char`\"{}friend1,friend2\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_abd9a981f197d41b3354c6637be315786}\label{classrelationships_1_1_relationships_abd9a981f197d41b3354c6637be315786}} 
+\index{relationships.Relationships@{relationships.Relationships}!Relationships@{Relationships}}
+\index{Relationships@{Relationships}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{Relationships()}{Relationships()}}
+{\footnotesize\ttfamily relationships.\+Relationships.\+Relationships (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for a \mbox{\hyperlink{classrelationships_1_1_relationships}{Relationships}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74}\label{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74}} 
+\index{relationships.Relationships@{relationships.Relationships}!addRelationship@{addRelationship}}
+\index{addRelationship@{addRelationship}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{addRelationship()}{addRelationship()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+add\+Relationship (\begin{DoxyParamCaption}\item[{String}]{list,  }\item[{\mbox{\hyperlink{classpeople_1_1_people}{People}}}]{ppl }\end{DoxyParamCaption})}
+
+This method check if relationship for two people exists. If not -\/ create relationship between two people and add this relationship to list of relationships. 
+\begin{DoxyParams}{Parameters}
+{\em list} & This parameter is string list which consists two user IDs. \\
+\hline
+{\em ppl} & This parameter is People type object which have list of all users \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classrelationships_1_1_relationships_acf19a4629ec23b8ab9b56fec49145e74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9}\label{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9}} 
+\index{relationships.Relationships@{relationships.Relationships}!deleteRelationship@{deleteRelationship}}
+\index{deleteRelationship@{deleteRelationship}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{deleteRelationship()}{deleteRelationship()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+delete\+Relationship (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}}}]{r }\end{DoxyParamCaption})}
+
+Removes passed relationship from the list of relationships 
+\begin{DoxyParams}{Parameters}
+{\em r} & Relation \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classrelationships_1_1_relationships_aa231f4baae597a9df9b684b9cd5970c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf}\label{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf}} 
+\index{relationships.Relationships@{relationships.Relationships}!findRelationshipsById@{findRelationshipsById}}
+\index{findRelationshipsById@{findRelationshipsById}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{findRelationshipsById()}{findRelationshipsById()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ relationships.\+Relationships.\+find\+Relationships\+By\+Id (\begin{DoxyParamCaption}\item[{String}]{id }\end{DoxyParamCaption})}
+
+This method finds every relationship containing passed id 
+\begin{DoxyParams}{Parameters}
+{\em id} & String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\+Relationship$>$ List of relationships containing that id 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classrelationships_1_1_relationships_aef312f25d49f21ef6783503e0e3f17bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8}\label{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8}} 
+\index{relationships.Relationships@{relationships.Relationships}!findRelationshipsByIDs@{findRelationshipsByIDs}}
+\index{findRelationshipsByIDs@{findRelationshipsByIDs}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{findRelationshipsByIDs()}{findRelationshipsByIDs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} relationships.\+Relationships.\+find\+Relationships\+By\+IDs (\begin{DoxyParamCaption}\item[{String}]{id1,  }\item[{String}]{id2 }\end{DoxyParamCaption})}
+
+This method finds relationship containing passed IDs 
+\begin{DoxyParams}{Parameters}
+{\em id1} & String \\
+\hline
+{\em id2} & String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} containing passed IDs 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classrelationships_1_1_relationships_abb469d03201a479c35bdb552664f74c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}\label{classrelationships_1_1_relationships_a99197f26aeb7569b2853696bd388aa73}} 
+\index{relationships.Relationships@{relationships.Relationships}!getRelations@{getRelations}}
+\index{getRelations@{getRelations}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{getRelations()}{getRelations()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} $>$ relationships.\+Relationships.\+get\+Relations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for a relations field. \begin{DoxyReturn}{Returns}
+list of \mbox{\hyperlink{classrelationships_1_1_relationship}{Relationship}} objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a8b96b338629ab1e1a36edadfe4ce85b6}\label{classrelationships_1_1_relationships_a8b96b338629ab1e1a36edadfe4ce85b6}} 
+\index{relationships.Relationships@{relationships.Relationships}!printAllRelationships@{printAllRelationships}}
+\index{printAllRelationships@{printAllRelationships}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{printAllRelationships()}{printAllRelationships()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+print\+All\+Relationships (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method prints out every relationship stored in the program Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_relationships_a8b96b338629ab1e1a36edadfe4ce85b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classrelationships_1_1_relationships_a8b96b338629ab1e1a36edadfe4ce85b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}\label{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98}} 
+\index{relationships.Relationships@{relationships.Relationships}!toString@{toString}}
+\index{toString@{toString}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String relationships.\+Relationships.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method overrides default method and returns a string representation of this object. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_relationships_a156b887b30b92a03040425f6836d9b98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}\label{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d}} 
+\index{relationships.Relationships@{relationships.Relationships}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void relationships.\+Relationships.\+write\+To\+File (\begin{DoxyParamCaption}\item[{String}]{filename }\end{DoxyParamCaption}) throws IOException}
+
+This method writes string to given file name. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & string \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & This throws could occur when writing to a file \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classrelationships_1_1_relationships_a3a6f2725c09bb7e3fda1c6af84db923d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_relationships_a6ba905bc63f76addd1fdfd35b4746ada}\label{classrelationships_1_1_relationships_a6ba905bc63f76addd1fdfd35b4746ada}} 
+\index{relationships.Relationships@{relationships.Relationships}!FIRST\_LINE\_RELATIONSHIPS@{FIRST\_LINE\_RELATIONSHIPS}}
+\index{FIRST\_LINE\_RELATIONSHIPS@{FIRST\_LINE\_RELATIONSHIPS}!relationships.Relationships@{relationships.Relationships}}
+\doxysubsubsection{\texorpdfstring{FIRST\_LINE\_RELATIONSHIPS}{FIRST\_LINE\_RELATIONSHIPS}}
+{\footnotesize\ttfamily final String relationships.\+Relationships.\+FIRST\+\_\+\+LINE\+\_\+\+RELATIONSHIPS = \char`\"{}friend1,friend2\textbackslash{}n\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projekty/\+DSA\+\_\+ehu\+\_\+\+Java\+Project/src/relationships/\mbox{\hyperlink{_relationships_8java}{Relationships.\+java}}\end{DoxyCompactItemize}
