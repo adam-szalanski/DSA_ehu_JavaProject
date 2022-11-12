@@ -187,7 +187,12 @@ public class Menu {
                 }
                 case 16: {
                     ppl.fillTheClasses();
+                    ppl.sortClasses();
                     ppl.printAllClasses();
+                    break;
+                }
+                case 17: {
+                    ppl.sortPeopleByMovies();
                     break;
                 }
                 case 0: {
@@ -227,7 +232,8 @@ public class Menu {
             System.out.println("13 - Sort people by surname and then name");
             System.out.println("14 - Sort people by birthplace, surname and then name");
             System.out.println("15 - Quicksort people by birthdate, surname and name");
-            System.out.println("16 - Classes of profiles");
+            System.out.println("16 - Show classes of profiles");
+            System.out.println("17 - Sort people by most common movies sets");
             System.out.println("0 - Quit");
 
             selection = input.nextInt();

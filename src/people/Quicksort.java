@@ -5,6 +5,10 @@ import java.util.List;
 public class Quicksort {
 
     private static <T extends Comparable<T>>
+
+    /**
+     * splits the list of people by birthdate, lastname and name
+     */
     int split(List<Person> list, int lo, int hi) {
         int left=lo+1;
         int right=hi;
@@ -74,6 +78,9 @@ public class Quicksort {
         return left-1;
     }
 
+    /**
+     * recurrently calls sorting for sub-lists
+     */
     private static <T extends Comparable<T>>
     void sort(List<Person> list, int lo, int hi) {
         if ((hi-lo) <= 0) { // fewer than 2 items
@@ -84,6 +91,9 @@ public class Quicksort {
         sort(list,splitPoint+1,hi);  // right subarray recursion
     }
 
+    /**
+     * first method of sorting
+     */
     public static <T extends Comparable<T>>
     void sort(List<Person> list) {
         if (list.size() <= 1) {

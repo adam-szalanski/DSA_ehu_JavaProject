@@ -8,6 +8,11 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.Comparator.comparingInt;
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.toMap;
 
 
 public final class People {
@@ -402,44 +407,82 @@ public final class People {
         }
     }
 
+    /**
+     * This function sorts people by surname and name with build-in sort
+     */
     public void sortBySurnameAndName(){
         people.sort(Comparator.comparing(Person::getLastname).thenComparing(Person::getName));
     }
 
+    /**
+     * This function sorts people by birthplace surname and name with build-in sort
+     */
     public void sortByBirthplaceSurnameAndName(){
         people.sort(Comparator.comparing(Person::getBirthplace).thenComparing(Person::getLastname).thenComparing(Person::getName));
     }
 
 
+    /**
+     * This function sorts people by birthplace surname and name with QuickSort
+     */
     public void quicksortByBirthplaceSurnameAndName(){
         Quicksort.sort(people);
     }
 
+
+    /**
+     * This function builds a classes of movies containing peoples who likes the same sets of movies
+     */
     public void fillTheClasses(){
         this.profiles.clear();
         for (Person p: this.people) {
-            int i = 0;
-            for (List list: profiles.keySet()) {
+            boolean i = false;
+            for (List list: this.profiles.keySet()) {
                 if(new HashSet<>(list).equals(new HashSet<>(p.getFilms()))){
-                    profiles.get(list).add(p);
-                    return;
+                    this.profiles.get(list).add(p);
+                    i = true;
+                    break;
                 }
-                i++;
             }
-
-            this.profiles.put(new ArrayList<String>(p.getFilms()), new ArrayList<Person>(Arrays.asList(p)));
+            if(!i)   this.profiles.put(new ArrayList<String>(p.getFilms()), new ArrayList<Person>(Arrays.asList(p)));
 
         }
     }
 
-
-
+    /**
+     * This function prints all movies classes
+     * and all the people who like them
+     */
     public void printAllClasses(){
-        for(List<String> string: profiles.keySet()){
+        for(List<String> string: this.profiles.keySet()){
+            System.out.println("");
             System.out.println(string);
-            for (Person person: profiles.get(string)) {
+            for (Person person: this.profiles.get(string)) {
                 System.out.println(person.toString());
             }
+        }
+    }
+
+    /**
+     * This function sorts the classes of movies by number of people who likes them
+     */
+    public void sortClasses(){
+        this.profiles = this.profiles.entrySet().stream()
+                .sorted((e1, e2) -> Integer.compare(e2.getValue().size(), e1.getValue().size()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+    }
+
+
+    /**
+     * This function sorts people by most common movies sets
+     * it creates the classes, sort them and then get sorted people from hashmap
+     */
+    public void sortPeopleByMovies(){
+        this.fillTheClasses();
+        this.sortClasses();
+        this.people.clear();
+        for (List list: this.profiles.keySet()) {
+            this.people.addAll(this.profiles.get(list));
         }
     }
 }
