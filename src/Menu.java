@@ -170,6 +170,26 @@ public class Menu {
                     }
                     break;
                 }
+                case 13: {
+                    ppl.sortBySurnameAndName();
+                    ppl.printAllPeople();
+                    break;
+                }
+                case 14: {
+                    ppl.sortByBirthplaceSurnameAndName();
+                    ppl.printAllPeople();
+                    break;
+                }
+                case 15: {
+                    ppl.quicksortByBirthplaceSurnameAndName();
+                    ppl.printAllPeople();
+                    break;
+                }
+                case 16: {
+                    ppl.fillTheClasses();
+                    ppl.printAllClasses();
+                    break;
+                }
                 case 0: {
                     return;
                 }
@@ -192,8 +212,8 @@ public class Menu {
             System.out.println();
             System.out.println("Choose from these choices");
             System.out.println("-------------------------\n");
-            System.out.println("1 - Load ‘people’ into the network");
-            System.out.println("2 - Load ‘relationships’");
+            System.out.println("1 - Load ï¿½peopleï¿½ into the network");
+            System.out.println("2 - Load ï¿½relationshipsï¿½");
             System.out.println("3 - Print out people");
             System.out.println("4 - Print out relationships");
             System.out.println("5 - Save to file people");
@@ -204,6 +224,10 @@ public class Menu {
             System.out.println("10 - Show people by birthplace");
             System.out.println("11 - Show people born between years");
             System.out.println("12 - Find potential matches by file with IDs");
+            System.out.println("13 - Sort people by surname and then name");
+            System.out.println("14 - Sort people by birthplace, surname and then name");
+            System.out.println("15 - Quicksort people by birthdate, surname and name");
+            System.out.println("16 - Classes of profiles");
             System.out.println("0 - Quit");
 
             selection = input.nextInt();

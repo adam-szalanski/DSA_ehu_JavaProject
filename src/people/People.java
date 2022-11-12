@@ -5,7 +5,6 @@ import relationships.Relationship;
 import relationships.Relationships;
 
 import java.io.IOException;
-import java.lang.invoke.CallSite;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -23,6 +22,7 @@ public final class People {
     }
 
     private List<Person> people;
+    public HashMap<List<String>, List<Person>> profiles = new HashMap<>();
 
     /**
      * Getter for a people field.
@@ -402,5 +402,44 @@ public final class People {
         }
     }
 
+    public void sortBySurnameAndName(){
+        people.sort(Comparator.comparing(Person::getLastname).thenComparing(Person::getName));
+    }
 
+    public void sortByBirthplaceSurnameAndName(){
+        people.sort(Comparator.comparing(Person::getBirthplace).thenComparing(Person::getLastname).thenComparing(Person::getName));
+    }
+
+
+    public void quicksortByBirthplaceSurnameAndName(){
+        Quicksort.sort(people);
+    }
+
+    public void fillTheClasses(){
+        this.profiles.clear();
+        for (Person p: this.people) {
+            int i = 0;
+            for (List list: profiles.keySet()) {
+                if(new HashSet<>(list).equals(new HashSet<>(p.getFilms()))){
+                    profiles.get(list).add(p);
+                    return;
+                }
+                i++;
+            }
+
+            this.profiles.put(new ArrayList<String>(p.getFilms()), new ArrayList<Person>(Arrays.asList(p)));
+
+        }
+    }
+
+
+
+    public void printAllClasses(){
+        for(List<String> string: profiles.keySet()){
+            System.out.println(string);
+            for (Person person: profiles.get(string)) {
+                System.out.println(person.toString());
+            }
+        }
+    }
 }
