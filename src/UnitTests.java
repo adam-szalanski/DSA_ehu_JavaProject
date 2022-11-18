@@ -429,4 +429,58 @@ public class UnitTests {
                         }
                 }
         }
+
+        @Nested
+        @DisplayName("MILESTONE 1. Nested class for testing features created between milestone 1 and milestone 2")
+        class MilestoneTest{
+                private static final String PERSON_TEST_FILENAME = "peopleG612277.txt";
+                private static final String RELATIONSHIP_TEST_FILENAME = "friendsG612277.txt";
+                private static Relationships testRelations;
+                private static People testPeople;
+
+                @BeforeEach
+                public void initMilestoneTests() throws FileNotFoundException, ParseException {
+                        List<String> peopleList = FileHandling.readFile(PERSON_TEST_FILENAME);
+                        List<String> relationList = FileHandling.readFile(RELATIONSHIP_TEST_FILENAME);
+                        testPeople=new People();
+                        testRelations=new Relationships();
+                        for (String personalData : peopleList)
+                                testPeople.addPersonFromString(personalData);
+                        for (String realtionshipData : relationList)
+                                testRelations.addRelationship(realtionshipData,testPeople);
+                }
+
+                @Test
+                @Tag("testFindPersonBySurname")
+                @Order(1)
+                @DisplayName("Test findPersonBySurname if finds correct person")
+                public void testFindPersonBySurname(){
+                        List<Person> foundPeople = testPeople.findPersonBySurname("Palkuc");
+                        assertEquals(1,foundPeople.size());
+                        Person foundPerson = foundPeople.get(0);
+                        assertEquals("damian2137",foundPerson.getIdPerson());
+                        assertEquals("Damian",foundPerson.getName());
+                        assertEquals("Palkuc",foundPerson.getLastname());
+                }
+                @Test
+                @Tag("testFindPersonByHome")
+                @Order(2)
+                @DisplayName("Test findPersonByHome if finds correct people")
+                public void testFindPersonByHome(){
+                        List<Person> foundPeople = testPeople.findPeopleByHome("Rzeszow");
+                        assertEquals(2,foundPeople.size());
+                }
+
+                @Test
+                @Tag("testFindPeopleBornBetween")
+                @Order(3)
+                @DisplayName("Test findPeopleBornBetween if finds correct people")
+                public void testFindPeopleBornBetween() {
+                        List<Person> foundPeople = testPeople.findPeopleBornBetween(1988,1990);
+                        assertEquals(1,foundPeople.size());
+                        Person foundPerson = foundPeople.get(0);
+                        assertEquals("Juan",foundPerson.getName());
+                        assertEquals("Kowal",foundPerson.getLastname());
+                }
+        }
 }
