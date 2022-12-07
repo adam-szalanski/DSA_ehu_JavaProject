@@ -141,4 +141,10 @@ public final class Relationships {
     public void shortestPath(String id1, String id2){
         graph.shortestDistance(6, id1, id2);
     }
+
+
+    public void longestPath(String id1, String id2){
+        graph.longestDistance(id1, id2);
+    }
+
 }

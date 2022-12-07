@@ -86,4 +86,45 @@ class Graph {
         return new LinkedList<>(people);
     }
 
+    public void longestDistance(String origin, String dest)
+    {
+        LinkedList<LinkedList<Person>> list = new LinkedList<>();
+
+        LinkedList<Person> longest = new LinkedList<>();
+
+        for (Person person : graph.keySet()) {
+            if(person.getIdPerson().equals(origin))  {
+                LinkedList<Person> newlist = new LinkedList<>();
+                newlist.add(person);
+                list.add(newlist);
+                break;
+            }
+        }
+
+        while(!list.isEmpty()){
+            int size = list.get(0).size()-1;
+            Person last = list.get(0).get(size);
+
+            if(last.getIdPerson().equals(dest)){
+                longest = copy(list.get(0));
+                list.remove(0);
+                continue;
+            }
+
+            for (Person friend: graph.get(last)) {
+                if(!list.get(0).contains(friend))   {
+                    LinkedList<Person> newlist = copy(list.get(0));
+                    newlist.add(friend);
+                    list.add(newlist);
+                }
+            }
+            list.remove(0);
+        }
+
+        System.out.println("longest path from " + origin + " to " + dest + ":");
+        for (Person p: longest) {
+            System.out.println(p.getIdPerson());
+        }
+    }
+
 }

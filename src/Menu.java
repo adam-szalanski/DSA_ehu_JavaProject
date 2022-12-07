@@ -200,12 +200,25 @@ public class Menu {
                     break;
                 }
                 case 19: {
-                    System.out.println("To show the path between two people write down two peoples ID (separated by ','):");
-                    Scanner input1 = new Scanner(System.in);
-                    String select1 = input1.nextLine();
+                    System.out.println("To show the shortest path between two people write down two peoples ID (separated by ','):");
+                    input = new Scanner(System.in);
+                    String select1 = input.nextLine();
                     String[] splited = select1.split(",");
                     try {
                         rels.shortestPath(splited[0], splited[1]);
+                    }
+                    catch (Exception e){
+                        System.out.println("Wrong IDs");
+                    }
+                    break;
+                }
+                case 20: {
+                    System.out.println("To show the longest path between two people write down two peoples ID (separated by ','):");
+                    input = new Scanner(System.in);
+                    String select1 = input.nextLine();
+                    String[] splited = select1.split(",");
+                    try {
+                        rels.longestPath(splited[0], splited[1]);
                     }
                     catch (Exception e){
                         System.out.println("Wrong IDs");
@@ -252,7 +265,8 @@ public class Menu {
             System.out.println("16 - Show classes of profiles");
             System.out.println("17 - Sort people by most common movies sets");
             System.out.println("18 - Create Graph");
-            System.out.println("19 - Shortest path of friends");
+            System.out.println("19 - Shortest path for friends");
+            System.out.println("20- Longest path for friends");
             System.out.println("0 - Quit");
 
             selection = input.nextInt();
