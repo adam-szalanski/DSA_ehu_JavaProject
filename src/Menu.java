@@ -197,6 +197,7 @@ public class Menu {
                 }
                 case 18: {
                     rels.createGraph();
+                    rels.printGraph();
                     break;
                 }
                 case 19: {
@@ -225,6 +226,12 @@ public class Menu {
                     catch (Exception e){
                         System.out.println("Wrong IDs");
                     }
+                    break;
+                }
+                case 21: {
+                    //TODO: "Use backtracking" ????? WHAT DOES IT MEAN ??????????????
+                    // ??????????????????????????????????????????????????????????????
+                    rels.cliqueOfPeople();
                     break;
                 }
                 case 0: {
@@ -267,8 +274,9 @@ public class Menu {
             System.out.println("16 - Show classes of profiles");
             System.out.println("17 - Sort people by most common movies sets");
             System.out.println("18 - Create Graph");
-            System.out.println("19 - Shortest path for friends");
-            System.out.println("20- Longest path for friends");
+            System.out.println("19 - Find shortest path in graph for two friends");
+            System.out.println("20 - Find longest path in graph for two friends");
+            System.out.println("21 - Show cliques of friends");
             System.out.println("0 - Quit");
 
             selection = input.nextInt();

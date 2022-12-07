@@ -135,16 +135,25 @@ public final class Relationships {
         for (Relationship rel: relations) {
             graph.addEdge(rel.getFriend1(), rel.getFriend2());
         }
+    }
+
+    public void printGraph() {
         graph.printGraph();
     }
 
     public void shortestPath(String id1, String id2){
+        createGraph();
         graph.shortestDistance(6, id1, id2);
     }
 
 
     public void longestPath(String id1, String id2){
+        createGraph();
         graph.longestDistance(id1, id2);
     }
 
+    public void cliqueOfPeople() {
+        createGraph();
+        graph.cliquesOfFriends();
+    }
 }

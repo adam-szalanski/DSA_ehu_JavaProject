@@ -127,4 +127,46 @@ class Graph {
         }
     }
 
+    public void cliquesOfFriends() {
+        LinkedList<LinkedList<Person>> list = new LinkedList<>();
+
+
+        for (Person person : graph.keySet()) {
+            LinkedList<Person> newlist2 = new LinkedList<>();
+            newlist2.add(person);
+            list.add(newlist2);
+
+            LinkedList<LinkedList<Person>> list2 = new LinkedList<>();
+
+            for (LinkedList<Person> lists : list) {
+                if (isFriendWithEveryone(person, lists)) {
+                    LinkedList<Person> newlist = copy(lists);
+                    newlist.add(person);
+                    list2.add(newlist);
+                }
+            }
+
+            for (LinkedList<Person> lists : list2){
+                list.add(lists);
+            }
+
+        }
+
+        for (LinkedList<Person> lists : list) {
+            if (lists.size() > 3) {
+                System.out.println("--------------------");
+                for (Person p : lists) {
+                    System.out.println(p.getIdPerson());
+                }
+            }
+        }
+    }
+
+    public boolean isFriendWithEveryone(Person person, LinkedList<Person> lists) {
+        for (Person p: lists) {
+            if(!graph.get(person).contains(p)) return false;
+        }
+        return true;
+    }
+
 }
