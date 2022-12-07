@@ -195,6 +195,10 @@ public class Menu {
                     ppl.sortPeopleByMovies();
                     break;
                 }
+                case 18: {
+                    rels.createGraph();
+                    break;
+                }
                 case 0: {
                     return;
                 }
@@ -234,6 +238,7 @@ public class Menu {
             System.out.println("15 - Quicksort people by birthdate, surname and name");
             System.out.println("16 - Show classes of profiles");
             System.out.println("17 - Sort people by most common movies sets");
+            System.out.println("18 - Create Graph");
             System.out.println("0 - Quit");
 
             selection = input.nextInt();

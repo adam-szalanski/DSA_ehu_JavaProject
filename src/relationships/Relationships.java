@@ -21,6 +21,7 @@ public final class Relationships {
 
     private List<Relationship> relations;
 
+    private Graph graph;
     /**
      * Getter for a relations field.
      * @return list of Relationship objects
@@ -127,5 +128,13 @@ public final class Relationships {
         for (Relationship r : relations){
             System.out.printf("%-30.30s %-30.30s%n",r.getFriend1().getIdPerson(),r.getFriend2().getIdPerson());
         }
+    }
+
+    public void createGraph() {
+        graph = new Graph();
+        for (Relationship rel: relations) {
+            graph.addEdge(rel.getFriend1(), rel.getFriend2());
+        }
+        graph.printGraph();
     }
 }
