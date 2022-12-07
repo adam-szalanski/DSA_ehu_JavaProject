@@ -76,7 +76,7 @@ public class Person {
      * @return String type object.
      */
     public String getIdPerson() {
-        return idPerson;
+        return this.idPerson;
     }
 
     /**

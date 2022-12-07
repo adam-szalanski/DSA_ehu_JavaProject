@@ -199,6 +199,19 @@ public class Menu {
                     rels.createGraph();
                     break;
                 }
+                case 19: {
+                    System.out.println("To show the path between two people write down two peoples ID (separated by ','):");
+                    Scanner input1 = new Scanner(System.in);
+                    String select1 = input1.nextLine();
+                    String[] splited = select1.split(",");
+                    try {
+                        rels.shortestPath(splited[0], splited[1]);
+                    }
+                    catch (Exception e){
+                        System.out.println("Wrong IDs");
+                    }
+                    break;
+                }
                 case 0: {
                     return;
                 }
@@ -239,6 +252,7 @@ public class Menu {
             System.out.println("16 - Show classes of profiles");
             System.out.println("17 - Sort people by most common movies sets");
             System.out.println("18 - Create Graph");
+            System.out.println("19 - Shortest path of friends");
             System.out.println("0 - Quit");
 
             selection = input.nextInt();

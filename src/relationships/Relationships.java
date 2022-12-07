@@ -137,4 +137,8 @@ public final class Relationships {
         }
         graph.printGraph();
     }
+
+    public void shortestPath(String id1, String id2){
+        graph.shortestDistance(6, id1, id2);
+    }
 }
