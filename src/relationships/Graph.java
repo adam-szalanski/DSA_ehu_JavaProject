@@ -153,7 +153,7 @@ class Graph {
         }
 
         for (LinkedList<Person> lists : list) {
-            if (lists.size() > 3) {
+            if (lists.size() > 4) {
                 System.out.println("--------------------");
                 for (Person p : lists) {
                     System.out.println(p.getIdPerson());
