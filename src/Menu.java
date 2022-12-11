@@ -289,9 +289,3 @@ public class Menu {
 
 
 }
-
-/*
-TODO: Milestone 2
-
-TODO: Two users have the same profile if they have the same collection of favourite movies. Group them together.
- */

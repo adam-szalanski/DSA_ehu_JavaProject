@@ -8,6 +8,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class represents a relationships in the network
+ * Consists of list of relations and graph representing the network of relations
+ * @field  relations is a List of objects of type Relationship
+ * @field  graph is an object of type Graph, it consists of nodes of people, and edges represents relationships
+ */
+
 public final class Relationships {
     public final static String FIRST_LINE_RELATIONSHIPS = "friend1,friend2\n";
     private final static String FILENAME = "friends";
@@ -130,6 +137,9 @@ public final class Relationships {
         }
     }
 
+    /**
+     * Method that for every relationship calls for function that adds edges and nodes to graph
+     */
     public void createGraph() {
         graph = new Graph();
         for (Relationship rel: relations) {
@@ -137,21 +147,39 @@ public final class Relationships {
         }
     }
 
+    /**
+     * Calls for function that prints graph
+     */
     public void printGraph() {
         graph.printGraph();
     }
 
+    /**
+     * Calls for creating the graph and finding shortest path in graph between two people under 6 graph nodes
+     * @param id1 String id of first person
+     * @param id2 String id of second person
+     */
     public void shortestPath(String id1, String id2){
         createGraph();
         graph.shortestDistance(6, id1, id2);
     }
 
 
+    /**
+     * Calls for creating the graph and finding longest path in graph between two people
+     * @param id1 String id of first person
+     * @param id2 String id of second person
+     */
     public void longestPath(String id1, String id2){
         createGraph();
         graph.longestDistance(id1, id2);
     }
 
+
+    /**
+     * Calls for creating the graph and printing cliques of people
+     * clique of people is a group of least 5 people where everyone has relationship with everyone
+     */
     public void cliqueOfPeople() {
         createGraph();
         graph.cliquesOfFriends();
