@@ -1,0 +1,177 @@
+\hypertarget{classrelationships_1_1_graph}{}\doxysection{relationships.\+Graph Class Reference}
+\label{classrelationships_1_1_graph}\index{relationships.Graph@{relationships.Graph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrelationships_1_1_graph_a89f2c6c3feb059853b5a07fa10b0e81b}{Graph}} ()
+\item 
+void \mbox{\hyperlink{classrelationships_1_1_graph_ace905bd002bf1039577e449620b88f6a}{add\+Edge}} (\mbox{\hyperlink{classpeople_1_1_person}{Person}} source, \mbox{\hyperlink{classpeople_1_1_person}{Person}} destination)
+\item 
+String \mbox{\hyperlink{classrelationships_1_1_graph_a2d21a111ed37a45597be453f868a8d1c}{print\+Graph}} ()
+\item 
+String \mbox{\hyperlink{classrelationships_1_1_graph_a7b51a3343895dcbaa4ea9a89cb5f5d94}{shortest\+Distance}} (int s, String origin, String dest)
+\item 
+String \mbox{\hyperlink{classrelationships_1_1_graph_a5aa1eff4b3f5141871500455e33a1779}{longest\+Distance}} (String origin, String dest)
+\item 
+String \mbox{\hyperlink{classrelationships_1_1_graph_ae029d549babc61728356711f77cb180b}{cliques\+Of\+Friends}} ()
+\item 
+boolean \mbox{\hyperlink{classrelationships_1_1_graph_a437cfe333e3b201b7122c7d933876724}{is\+Friend\+With\+Everyone}} (\mbox{\hyperlink{classpeople_1_1_person}{Person}} person, Linked\+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$ lists)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class implements a graph which represents the network. The nodes are the people in network, and edges are relationships between them Consists of list of relations and graph representing the network of relations @field graph is a Map with nodes and corresponding to them edges 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_graph_a89f2c6c3feb059853b5a07fa10b0e81b}\label{classrelationships_1_1_graph_a89f2c6c3feb059853b5a07fa10b0e81b}} 
+\index{relationships.Graph@{relationships.Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily relationships.\+Graph.\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for a \mbox{\hyperlink{classrelationships_1_1_graph}{Graph}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrelationships_1_1_graph_ace905bd002bf1039577e449620b88f6a}\label{classrelationships_1_1_graph_ace905bd002bf1039577e449620b88f6a}} 
+\index{relationships.Graph@{relationships.Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily void relationships.\+Graph.\+add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpeople_1_1_person}{Person}}}]{source,  }\item[{\mbox{\hyperlink{classpeople_1_1_person}{Person}}}]{destination }\end{DoxyParamCaption})}
+
+This function adds an edge between two given nodes and calls for creating nodes if they doesn\textquotesingle{}t exist 
+\begin{DoxyParams}{Parameters}
+{\em source} & String id of first person \\
+\hline
+{\em destination} & String id of second person \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_ace905bd002bf1039577e449620b88f6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_graph_ae029d549babc61728356711f77cb180b}\label{classrelationships_1_1_graph_ae029d549babc61728356711f77cb180b}} 
+\index{relationships.Graph@{relationships.Graph}!cliquesOfFriends@{cliquesOfFriends}}
+\index{cliquesOfFriends@{cliquesOfFriends}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{cliquesOfFriends()}{cliquesOfFriends()}}
+{\footnotesize\ttfamily String relationships.\+Graph.\+cliques\+Of\+Friends (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates the graph and prints cliques of people, where clique of people is a group of least 5 people where everyone has relationship with everyone
+
+For every person it adds a linked list only with them into linked list of cliques of friends. Then for all linked list of clique it checks if the person is a friend with everyone, and if so it adds a new clique with this person added. At last, it prints every clique of friends with more than 4 participants. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_ae029d549babc61728356711f77cb180b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_ae029d549babc61728356711f77cb180b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_graph_a437cfe333e3b201b7122c7d933876724}\label{classrelationships_1_1_graph_a437cfe333e3b201b7122c7d933876724}} 
+\index{relationships.Graph@{relationships.Graph}!isFriendWithEveryone@{isFriendWithEveryone}}
+\index{isFriendWithEveryone@{isFriendWithEveryone}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{isFriendWithEveryone()}{isFriendWithEveryone()}}
+{\footnotesize\ttfamily boolean relationships.\+Graph.\+is\+Friend\+With\+Everyone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classpeople_1_1_person}{Person}}}]{person,  }\item[{Linked\+List$<$ \mbox{\hyperlink{classpeople_1_1_person}{Person}} $>$}]{lists }\end{DoxyParamCaption})}
+
+This method checks if a given person is a friend with everyone in given list Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_a437cfe333e3b201b7122c7d933876724_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_graph_a5aa1eff4b3f5141871500455e33a1779}\label{classrelationships_1_1_graph_a5aa1eff4b3f5141871500455e33a1779}} 
+\index{relationships.Graph@{relationships.Graph}!longestDistance@{longestDistance}}
+\index{longestDistance@{longestDistance}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{longestDistance()}{longestDistance()}}
+{\footnotesize\ttfamily String relationships.\+Graph.\+longest\+Distance (\begin{DoxyParamCaption}\item[{String}]{origin,  }\item[{String}]{dest }\end{DoxyParamCaption})}
+
+This function finds the longest path in graph between two people 
+\begin{DoxyParams}{Parameters}
+{\em origin} & String id of first person \\
+\hline
+{\em dest} & String id of second person\\
+\hline
+\end{DoxyParams}
+It creates a linked list to which it adds linked list with first person, and the second linked list that holds the longest path to destination the next step is to -\/ in a loop -\/ check if the last person in first linked list is designated person, and if so update the longest path linked list algorithm also adds a new linked list with added new node, where node is the friend of last person in first linked list, this step is repeated for every friend of the node and then the first linked list is removed -\/ every linked list represents checked path. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_a5aa1eff4b3f5141871500455e33a1779_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_a5aa1eff4b3f5141871500455e33a1779_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_graph_a2d21a111ed37a45597be453f868a8d1c}\label{classrelationships_1_1_graph_a2d21a111ed37a45597be453f868a8d1c}} 
+\index{relationships.Graph@{relationships.Graph}!printGraph@{printGraph}}
+\index{printGraph@{printGraph}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{printGraph()}{printGraph()}}
+{\footnotesize\ttfamily String relationships.\+Graph.\+print\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints a graph as people and friends connected with them
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_a2d21a111ed37a45597be453f868a8d1c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classrelationships_1_1_graph_a7b51a3343895dcbaa4ea9a89cb5f5d94}\label{classrelationships_1_1_graph_a7b51a3343895dcbaa4ea9a89cb5f5d94}} 
+\index{relationships.Graph@{relationships.Graph}!shortestDistance@{shortestDistance}}
+\index{shortestDistance@{shortestDistance}!relationships.Graph@{relationships.Graph}}
+\doxysubsubsection{\texorpdfstring{shortestDistance()}{shortestDistance()}}
+{\footnotesize\ttfamily String relationships.\+Graph.\+shortest\+Distance (\begin{DoxyParamCaption}\item[{int}]{s,  }\item[{String}]{origin,  }\item[{String}]{dest }\end{DoxyParamCaption})}
+
+This function finds the shortest path in graph between two people under \char`\"{}s\char`\"{} graph nodes 
+\begin{DoxyParams}{Parameters}
+{\em s} & int, number of max nodes between searched people \\
+\hline
+{\em origin} & String id of first person \\
+\hline
+{\em dest} & String id of second person\\
+\hline
+\end{DoxyParams}
+It creates a linked list to which it adds linked list with first person, the next step is to add in a loop a new linked list with added new node, where node is the friend of last person in first linked list, this step is repeated for every friend of the node and then the first linked list is removed -\/ every linked list represents checked path. The algorithm stops if the destination node is found under \char`\"{}s\char`\"{} steps and writes the path, and if the path is not found under 6 steps it informs about it. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_a7b51a3343895dcbaa4ea9a89cb5f5d94_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrelationships_1_1_graph_a7b51a3343895dcbaa4ea9a89cb5f5d94_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projekty/\+DSA\+\_\+ehu\+\_\+\+Java\+Project/src/relationships/\mbox{\hyperlink{_graph_8java}{Graph.\+java}}\end{DoxyCompactItemize}

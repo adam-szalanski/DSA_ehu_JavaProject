@@ -28,7 +28,7 @@ public final class Relationships {
 
     private List<Relationship> relations;
 
-    private Graph graph;
+    public Graph graph;
     /**
      * Getter for a relations field.
      * @return list of Relationship objects
@@ -151,7 +151,8 @@ public final class Relationships {
      * Calls for function that prints graph
      */
     public void printGraph() {
-        graph.printGraph();
+        String result = graph.printGraph();
+        System.out.println(result);
     }
 
     /**
@@ -161,7 +162,8 @@ public final class Relationships {
      */
     public void shortestPath(String id1, String id2){
         createGraph();
-        graph.shortestDistance(6, id1, id2);
+        String result = graph.shortestDistance(6, id1, id2);
+        System.out.println(result);
     }
 
 
@@ -172,7 +174,8 @@ public final class Relationships {
      */
     public void longestPath(String id1, String id2){
         createGraph();
-        graph.longestDistance(id1, id2);
+        String result = graph.longestDistance(id1, id2);
+        System.out.println(result);
     }
 
 
@@ -182,6 +185,7 @@ public final class Relationships {
      */
     public void cliqueOfPeople() {
         createGraph();
-        graph.cliquesOfFriends();
+        String result = graph.cliquesOfFriends();
+        System.out.println(result);
     }
 }

@@ -3,6 +3,8 @@ import jdk.jfr.Description;
 import org.junit.jupiter.api.*;
 import people.People;
 import people.Person;
+import relationships.Graph;
+
 import relationships.Relationship;
 import relationships.Relationships;
 import java.io.*;
@@ -482,5 +484,80 @@ public class UnitTests {
                         assertEquals("Juan",foundPerson.getName());
                         assertEquals("Kowal",foundPerson.getLastname());
                 }
+        }
+
+
+        @Nested
+        @DisplayName("GRAPHS. Nested class for testing features of Graph class, and corresponding Relationship functions")
+        class GraphTest{
+                private static final String PERSON_TEST_FILENAME = "peopleG612277.txt";
+                private static final String RELATIONSHIP_TEST_FILENAME = "friendsG612277.txt";
+                private static Relationships testRelations;
+
+
+                @BeforeEach
+                public void initMilestoneTests() throws FileNotFoundException, ParseException {
+                        List<String> peopleList = FileHandling.readFile(PERSON_TEST_FILENAME);
+                        List<String> relationList = FileHandling.readFile(RELATIONSHIP_TEST_FILENAME);
+                        People testPeople = new People();
+                        testRelations=new Relationships();
+                        for (String personalData : peopleList)
+                                testPeople.addPersonFromString(personalData);
+                        for (String realtionshipData : relationList)
+                                testRelations.addRelationship(realtionshipData, testPeople);
+
+                        testRelations.createGraph();
+                }
+
+                @Test
+                @Order(1)
+                @DisplayName("Test creating graph")
+                public void testCreatingGraph(){
+                        String builder = "damian2137: ada micha lysy klamka \n" +
+                                "lysy: ada damian2137 micha klamka \n" +
+                                "klamka: ada damian2137 micha lysy \n" +
+                                "ada: damian2137 micha klamka lysy \n" +
+                                "micha: ada damian2137 klamka lysy \n";
+                        assertEquals(builder,testRelations.graph.printGraph());
+
+                }
+
+                @Test
+                @Order(2)
+                @DisplayName("Test shortest path")
+                public void testShortestPath(){
+                        String builder = "path from micha to klamka under 5 steps:\n" +
+                                "micha\n" +
+                                "klamka\n";
+                        assertEquals(builder,testRelations.graph.shortestDistance(6, "micha", "klamka"));
+                }
+
+                @Test
+                @Order(3)
+                @DisplayName("Test longest path")
+                public void testLongestPath(){
+                        String builder = "longest path from micha to klamka:\n" +
+                                "micha\n" +
+                                "lysy\n" +
+                                "damian2137\n" +
+                                "ada\n" +
+                                "klamka\n";
+                        assertEquals(builder,testRelations.graph.longestDistance("micha", "klamka"));
+                }
+
+                @Test
+                @Order(4)
+                @DisplayName("Test cliques of friends")
+                public void cliquesOfFriends(){
+                        String builder = "--------------------\n" +
+                                "damian2137\n" +
+                                "lysy\n" +
+                                "klamka\n" +
+                                "ada\n" +
+                                "micha\n";
+                        assertEquals(builder,testRelations.graph.cliquesOfFriends());
+                }
+
+
         }
 }

@@ -8,7 +8,7 @@ import people.Person;
  * Consists of list of relations and graph representing the network of relations
  * @field graph is a Map with nodes and corresponding to them edges
  */
-class Graph {
+public class Graph {
 
     private Map<Person, List<Person>> graph = new HashMap<>();
 
@@ -46,8 +46,10 @@ class Graph {
 
     /**
      * Prints a graph as people and friends connected with them
+     *
+     * @return
      */
-    public void printGraph() {
+    public String printGraph() {
         StringBuilder builder = new StringBuilder();
 
         for(Person person : graph.keySet()) {
@@ -57,7 +59,7 @@ class Graph {
             }
             builder.append("\n");
         }
-        System.out.println(builder.toString());
+        return builder.toString();
     }
 
     /**
@@ -71,8 +73,9 @@ class Graph {
      * this step is repeated for every friend of the node and then the first linked list is removed - every linked list represents checked path.
      * The algorithm stops if the destination node is found under "s" steps and writes the path, and if the path is not found under 6 steps it informs about it.
      */
-    public void shortestDistance(int s, String origin, String dest)
+    public String shortestDistance(int s, String origin, String dest)
     {
+        StringBuilder builder = new StringBuilder();
         LinkedList<LinkedList<Person>> list = new LinkedList<>();
 
         for (Person person : graph.keySet()) {
@@ -90,12 +93,12 @@ class Graph {
             Person last = list.get(0).get(size);
             for (Person friend: graph.get(last)) {
                 if(friend.getIdPerson().equals(dest)){
-                    System.out.println("path from " + origin + " to " + dest + " under " + s + " steps:");
+                    builder.append("path from " + origin + " to " + dest + " under " + s + " steps:\n");
                     for (Person p: list.get(0)) {
-                        System.out.println(p.getIdPerson());
+                        builder.append(p.getIdPerson() + "\n");
                     }
-                    System.out.println(friend.getIdPerson());
-                    return;
+                    builder.append(friend.getIdPerson() + "\n");
+                    return builder.toString();
                 }
 
                 if(!list.get(0).contains(friend))   {
@@ -106,11 +109,10 @@ class Graph {
             }
             list.remove(0);
             if(s==0){
-                System.out.println("there is no path under 6 steps");
-                return;
+                return "there is no path under 6 steps";
             }
         }
-
+        return "graph is empty";
     }
 
     /**
@@ -123,8 +125,9 @@ class Graph {
      * algorithm also adds a new linked list with added new node, where node is the friend of last person in first linked list,
      * this step is repeated for every friend of the node and then the first linked list is removed - every linked list represents checked path.
      */
-    public void longestDistance(String origin, String dest)
+    public String longestDistance(String origin, String dest)
     {
+        StringBuilder builder = new StringBuilder();
         LinkedList<LinkedList<Person>> list = new LinkedList<>();
 
         LinkedList<Person> longest = new LinkedList<>();
@@ -158,10 +161,11 @@ class Graph {
             list.remove(0);
         }
 
-        System.out.println("longest path from " + origin + " to " + dest + ":");
+        builder.append("longest path from " + origin + " to " + dest + ":\n");
         for (Person p: longest) {
-            System.out.println(p.getIdPerson());
+            builder.append(p.getIdPerson() + "\n");
         }
+        return builder.toString();
     }
 
     /**
@@ -171,7 +175,8 @@ class Graph {
      * Then for all linked list of clique it checks if the person is a friend with everyone, and if so it adds a new clique with this person added.
      * At last, it prints every clique of friends with more than 4 participants.
      */
-    public void cliquesOfFriends() {
+    public String cliquesOfFriends() {
+        StringBuilder builder = new StringBuilder();
         LinkedList<LinkedList<Person>> list = new LinkedList<>();
 
 
@@ -198,12 +203,13 @@ class Graph {
 
         for (LinkedList<Person> lists : list) {
             if (lists.size() > 4) {
-                System.out.println("--------------------");
+                builder.append("--------------------\n");
                 for (Person p : lists) {
-                    System.out.println(p.getIdPerson());
+                    builder.append(p.getIdPerson() + "\n");
                 }
             }
         }
+        return builder.toString();
     }
 
     /**
