@@ -12,11 +12,11 @@ Same for relationships.
 
 The program also allows to save current state into new .txt files allowing to move and reload program state between multiple instances.
 
-By use of files like residential.txt containing:
+By use of files like [residential.txt](../main/residential.txt) containing:
 idperson (mandatory first field) and ids separated by new lines, program is allowed to select data of specified people only.
 
 # .TXT Files
-Files with names like "\*people\*" contain information about people separated with comas and for multiple value fields, each value separated with semicolon.
+Files with names like [\*people\*](../main/df_people_8.txt) contain information about people separated with comas and for multiple value fields, each value separated with semicolon.
 
 Contained data are:
 - idperson - Id of a person in String format
@@ -31,7 +31,7 @@ Contained data are:
 - films - Multivalue field containing names of persons favourite movies
 - groupcode - Code of a group that person is a part of
 
-Files with names like "\*friends\*" contain pairs of people later referenced as relationships.
+Files with names like [\*friends\*](../main/df_friends_8L19.txt) contain pairs of people later referenced as relationships.
 
 Containded data are:
 - friend1 - Id of a person (same as id in "\*people\*" files)
