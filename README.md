@@ -34,5 +34,5 @@ Contained data are:
 Files with names like [\*friends\*](../main/df_friends_8L19.txt) contain pairs of people later referenced as relationships.
 
 Containded data are:
-- friend1 - Id of a person (same as id in "\*people\*" files)
-- friend2 - Id of a person (same as id in "\*people\*" files)
+- friend1 - Id of a person (same as id in \*people\* files)
+- friend2 - Id of a person (same as id in \*people\* files)
