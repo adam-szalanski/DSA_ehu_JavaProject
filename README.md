@@ -15,7 +15,7 @@ The program also allows to save current state into new .txt files allowing to mo
 By use of files like residential.txt containing:
 idperson (mandatory first field) and ids separated by new lines, program is allowed to select data of specified people only.
 
-# TXT Files
+# .TXT Files
 Files with names like "*people*" contain information about people separated with comas and for multiple value fields, each value separated with semicolon.
 
 Contained data are:
