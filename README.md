@@ -1,5 +1,5 @@
 # DSA_ehu_JavaProject
-This project was created as part of Data Structures and Analysis classes conducted by [Jose Javier Dolado Cosin](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica/profesorado?p_redirect=fichaPDI&p_idp=3647&nredi=1) at the [University of the Basque Country](https://www.ehu.eus/en/en-home).
+This project was created as part of Data Structures and Algorithms classes conducted by [Jose Javier Dolado Cosin](https://www.ehu.eus/es/web/graduak/grado-ingenieria-informatica/profesorado?p_redirect=fichaPDI&p_idp=3647&nredi=1) at the [University of the Basque Country](https://www.ehu.eus/en/en-home).
 It's purpose is to load people and their relationships from included txt files into custom classes and connect them into groups based on thier favourite movies lists.
 
 # Features
