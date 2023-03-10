@@ -49,6 +49,7 @@ Containded data are:
 <a href="https://linkedin.com/in/adam-szalanski">
    <img src="https://media.licdn.com/dms/image/D4D03AQEQQN-CcweVoQ/profile-displayphoto-shrink_800_800/0/1675129015106?e=1683763200&v=beta&t=Js1TJsuLwZvTTGnCSXgcr014M445PwfR4sUXZrQ7fWA" alt="Adam Szałański">
   </a>
+   </td>
 <td>
 <a href="https://linkedin.com/in/brajan-miskowicz">
    <img src="https://media.licdn.com/dms/image/D4D35AQEIDYEK-jbHow/profile-framedphoto-shrink_800_800/0/1676476161135?e=1679050800&v=beta&t=c5DBY8K-dXd-Qe5e1h3yKahaIOB-j5oF3DCZN42od0w" alt="Brajan Miśkowicz">
