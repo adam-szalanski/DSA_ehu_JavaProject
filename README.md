@@ -47,17 +47,17 @@ Containded data are:
 <tr>
 <td>
 <a href="https://linkedin.com/in/adam-szalanski">
-   <img src="https://media.licdn.com/dms/image/D4D03AQEQQN-CcweVoQ/profile-displayphoto-shrink_800_800/0/1675129015106?e=1683763200&v=beta&t=Js1TJsuLwZvTTGnCSXgcr014M445PwfR4sUXZrQ7fWA" alt="Adam Szałański">
+   <img src="https://media.licdn.com/dms/image/D4D03AQEQQN-CcweVoQ/profile-displayphoto-shrink_800_800/0/1675129015106?e=1691625600&v=beta&t=uvJfoD4nDRJDEpLwzY0u2_ldEXJWMgbcx0iu_FOu7aI" alt="Adam Szałański">
   </a>
    </td>
 <td>
 <a href="https://linkedin.com/in/brajan-miskowicz">
-   <img src="https://media.licdn.com/dms/image/D4D35AQEIDYEK-jbHow/profile-framedphoto-shrink_800_800/0/1676476161135?e=1679050800&v=beta&t=c5DBY8K-dXd-Qe5e1h3yKahaIOB-j5oF3DCZN42od0w" alt="Brajan Miśkowicz">
+   <img src="https://media.licdn.com/dms/image/D4E03AQFw9D5Wsx8Z-g/profile-displayphoto-shrink_800_800/0/1684920712053?e=1691625600&v=beta&t=qurmJrXqNEKP2R4cj6I60uCjh4L9kA3BTuBBQmJC9Ig" alt="Brajan Miśkowicz">
   </a>
 </td>
 <td>
 <a href="https://linkedin.com/in/lucja-palkus">
-   <img src="https://media.licdn.com/dms/image/C4E03AQHiZl75qDVgAw/profile-displayphoto-shrink_800_800/0/1656453073719?e=1683763200&v=beta&t=CMzF7RO_2cQASvBa0P4qjfXH62EpZHLmnKDC6P8LDS4" alt="Łucja Pałkus">
+   <img src="https://media.licdn.com/dms/image/C4E03AQHiZl75qDVgAw/profile-displayphoto-shrink_800_800/0/1656453073719?e=1691625600&v=beta&t=YImez-iq78SQ5_sLDcfVnpp_T-FRYRnjZuzEx-khDKw" alt="Łucja Pałkus">
   </a>
 </td>
 </tr>
